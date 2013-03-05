@@ -1,0 +1,137 @@
+// TEMPLATE
+// ---------
+html, body {
+	//background: url(img/texture-bg2.jpg);
+	background: @mainBackground;
+}
+
+// Displays
+.none { display:none; }
+.inline { display:inline; }
+.block { display:block; }
+.inline-block { display:inline-block; }
+
+.cl { clear:both;}
+
+.nav-clear {
+	margin-top:40px;
+}
+.template-main {
+	background:@white;
+	padding:0 2em;
+	section {
+		padding:0;
+		margin-bottom:1.5em;
+	}
+}
+
+// New Message Style
+.table .msg-unread {
+	background:lighten(@blue, 40%) !important;
+	font-weight:bold;
+}
+
+
+// For Registration Pages
+.register-container {
+	width:960px;
+	margin:0 auto 40px auto;
+	.head {
+		padding:0 0 20px 40px;
+	}
+	.content{	
+		background-color:@white;
+		.border-radius(10px);
+		padding:40px;
+		.box-shadow();
+	}
+}
+
+// App Page Heading + Search 
+.appHead {
+	position:relative;
+	z-index:1;
+	.hd {
+		.pull-left;
+		padding:0 0 1.5em 0px;
+		h1,h2,h3,h4,h5,h6 {
+			.inline;	
+		}
+	}
+	.globalSearch {
+		.pull-right;
+		margin:0 0 -1px 0;
+		padding:5px 0 0 0;
+		.search-query {
+			.border-radius(14px 0 0 14px);
+			width:260px;
+		}
+		.globalSearchBtn {
+			.border-radius(0 17px 17px 0);
+			padding:4px 10px 4px 7px;
+		}
+	}
+}
+.vip_head_BG {
+	background-image: url('img/vip_head_BG.jpg');
+	-webkit-background-size:cover;
+	-moz-background-size:cover;
+	background-size:cover;
+	height: 500px;
+	.border-radius(10px);
+	.mbl;
+	.left {
+		min-width:250px;
+		background-color: rgba(255,255,255,0.8);
+		.border-radius(5px);
+		.pal;
+		.mal;
+	}
+}
+.estimated_no {
+	color:@black;
+    font-size: 300%;
+    font-weight: bold;
+    height: 40px;
+    line-height: 110%;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.highlighted {
+	background-color:lighten(@yellow, 20%);
+	margin:-3px;
+	padding:3px;
+	.strong;
+ }
+.focus:focus {
+	background-color: @grayLighter;
+}
+.focus-controls {
+	visibility: hidden;
+}
+.cropImage {
+	position:fixed;
+	z-index:999999;
+	top:50px;
+	left:50%;
+	.inner {
+		width:350px;
+		margin-left:-200px;
+		
+		background: @white;
+		padding:25px;
+		.border-radius(5px);
+		border:1px solid @grayLighter;
+		.box-shadow(2px 2px 3px rgba(0,0,0,0.2));
+		.cropbox {
+			width:350px;
+			height:350px;
+			overflow:hidden;
+		}
+	}
+}
+.table-vip tbody{
+	td {
+		.text_c;
+	}
+}

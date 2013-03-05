@@ -1,0 +1,33 @@
+// LARGE DESKTOP & UP
+// ------------------
+
+@media (min-width: 1200px) {
+
+	.container-fluid {
+	padding-left: @gridGutterWidth;
+	padding-right: @gridGutterWidth;
+	max-width:1500px;
+	margin:0 auto;
+	}
+	.nav-clear {
+		margin-top:6em;
+	}
+
+	// Fixed grid
+	#grid > .core(70px, 30px);
+
+	// Fluid grid
+	#grid > .fluid(5.982905983%, 2.564102564%);
+
+	// Input grid
+	#grid > .input(70px, 30px);
+
+	// Thumbnails
+	.thumbnails {
+	margin-left: -30px;
+	}
+	.thumbnails > li {
+	margin-left: 30px;
+	}
+
+}

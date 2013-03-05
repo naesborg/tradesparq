@@ -1,11 +1,21 @@
 var express = require('express')
   , stylus = require('stylus')
   , nib = require('nib');
+var lessMiddleware = require('less-middleware');
 
 var app = express.createServer();
 
 app.configure(function () {
 
+    //other configuration here...
+    /*
+    app.use(lessMiddleware({
+        src      : __dirname + "/public",
+        compress : true
+    }));
+    app.use(express.static(__dirname + '/public'));
+    */
+    
     app.use(stylus.middleware({ src: __dirname + '/', compile: compile }));
     app.use(express.static(__dirname + '/'));
     app.set('views', __dirname);
