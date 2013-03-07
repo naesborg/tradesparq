@@ -13,7 +13,7 @@
         <!-- Add to home screen icon for iOS -->
         <link rel="apple-touch-icon" href="favicon.png" />
         
-        <link rel="stylesheet" type="text/css" href="styles/bootstrap.css">
+        <link rel="stylesheet/less" type="text/css" href="styles/bootstrap/bootstrap.less">
         <link rel="stylesheet/less" type="text/css" href="styles/page/index2.less">
         <link rel="stylesheet/less" type="text/css" href="styles/bootstrap/responsive.less">
 
@@ -44,6 +44,7 @@
                         </li>
                     </ul>
                 </nav>
+                <div class="searchformcontainer col-l"></div>
                 <div class="col-r account mr-10">
                     <a href="#" class="bold mr-15">Login</a>
                     <div class="btn-group">
@@ -56,20 +57,11 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-r lng-selector">
-                    <div class="btn-group">
-                        <a class="btn dropdown-toggle" data-toggle="dropdown" href="#"><span class="flag-en"></span>English<span class="caret"></span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li class="dropdown-arrow"><span class="caret"></span></li>
-                            <li>
-                                <a href=""><span class="flag-en"></span>English</a>
-                            </li>
-                            <li>
-                                <a href=""><span class="flag-cn"></span>Chinese</a>
-                            </li>
-                        </ul>
-                    </div>
+                <div class="col-r lng-selector"></div>
+            </div>
+            <div class="navcontainer">
+                <div class="page-width cf">
+                    <a href="#" class="navcontainer-top col-l">GO BACK TO TOP<span class="caret"></span></a>
                 </div>
             </div>
         </header>
@@ -96,15 +88,8 @@
             </div>
         </div>
         <div class="layout-up">
-            <div class="search page-width cf">
-                <div class="col-r">
-                    <form class="form-search">
-                        <div class="input-append">
-                            <input type="text" name="user_search" class="span2 search-query opensans" placeholder="Search for products, people &amp; company">
-                            <button type="submit" class="">Search</button>
-                        </div>
-                    </form>
-                </div>
+            <div class="searchbar page-width cf">
+                <div class="col-r searchformcontainer"></div>
                 <h2 class="elektra">Try it now, the Safest Place for Global Trade™</h2>
             </div>
             <div class="categorization page-width mt-20">
@@ -521,7 +506,7 @@
             s.parentNode.insertBefore(g,s)}(document,'script'));
         </script-->
     
-        <script src="scripts/vendor/require/2.0.5/require.js" data-main="scripts/main"></script>
+        <script src="scripts/vendor/require/2.0.5/require.js" data-main="scripts/page/index2"></script>
 
     </body>
 </html>

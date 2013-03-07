@@ -29,3 +29,56 @@ nav ul > li.active > a
 	background: rgba(78, 86, 94, .5);
 	border-radius: 20px;
 }
+/* + Append navigation */
+.navcontainer
+{
+	overflow: hidden;
+	display: none;
+	padding: 2px 0;
+	width: 100%;
+	background-color: rgba(68, 75, 82, 0.85);
+}
+.navcontainer a.navcontainer-top
+{
+	font-size: 95%;
+	font-weight: lighter;
+	color: #fff;
+	line-height: 2em;
+	margin-left: 10px;
+}
+.navcontainer a.navcontainer-top > .caret
+{
+	margin: 4px 0 0 5px;
+	width: 0;
+	height: 0;
+	display: inline-block;
+	border-width: 5px;
+	border-style: solid;
+	border-top-color: transparent;
+	border-left-color: transparent;
+	border-right-color: transparent;
+	border-bottom-color: #fff;
+}
+.navcontainer nav
+{
+	margin: 0 0 0 50px;
+}
+.navcontainer nav ul > li
+{
+	margin-left: 45px;
+}
+.navcontainer nav ul > li:first-child
+{
+	margin-left: 0;
+}
+.navcontainer nav ul > li > a
+{
+	font-size: 95%;
+	font-weight: lighter;
+	color: #fff;
+}
+.navcontainer nav ul > li.active > a
+{
+	background: #252531;
+}
+
