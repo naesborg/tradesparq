@@ -1,7 +1,21 @@
 /* + Slide */
+.slide > ul > li
+{
+	display: none;
+}
+.slide > ul > li.slideactive
+{
+	display: block;
+}
+/* - Hero testimonial */
 .herotestimonial
 {
 	position: relative;
+}
+.herotestimonial > ul
+{
+	margin: 0;
+	min-height: 756px;
 }
 .herotestimonial > ul > li.slide-1
 {
@@ -10,13 +24,23 @@
 	background-repeat: no-repeat, no-repeat;
 	min-height: 756px;
 }
-.herotestimonial > ul
+.herotestimonial > ul > li.slide-2
 {
-	margin: 0;
+	background-image: url(../images/fg_slide2.png), url(../images/bg_slide2.png);
+	background-position: 90% top, center top;
+	background-repeat: no-repeat, no-repeat;
+	min-height: 756px;
+}
+.herotestimonial > ul > li.slide-3
+{
+	background-image: url(../images/bg_slide3.png);
+	background-position: center top;
+	background-repeat: no-repeat;
+	min-height: 756px;
 }
 .herotestimonial-des
 {
-	padding: 220px 100px 0;
+	padding: 200px 100px 0;
 	width: 350px;
 	text-align: center;
 	position: relative;
@@ -24,9 +48,9 @@
 .herotestimonial-des > p
 {
 	color: #fff;
-	font-size: 30px;
-	font-style: lighter;
-	line-height: 1.1em;
+	font-size: 28px;
+	font-weight: lighter;
+	line-height: 1.2em;
 }
 .herotestimonial-des > .btn
 {
@@ -41,21 +65,25 @@
 	border-width: 6px;
 	border-style: solid;
 	border-color: transparent;
+	border-left-color: #333;
+}
+.herotestimonial-des > .btn.btn-primary > .caret
+{
 	border-left-color: #fff;
 }
 /* - Slide Button */
-.slidebtn
+.herotestimonial > .slidebtn
 {
 	width: 100%;
 	position: absolute;
 	top: 0;
 }
-.slidebtn > div
+.herotestimonial > .slidebtn > div
 {
 	position: relative;
 }
-.slidebtn-prev,
-.slidebtn-next
+.herotestimonial .slidebtn-prev,
+.herotestimonial .slidebtn-next
 {
 	background: #fff;
 	border: 1px solid #ddd;
@@ -66,28 +94,28 @@
 	position: absolute;
 	top: 260px;
 }
-.slidebtn-prev
+.herotestimonial .slidebtn-prev
 {
 	left: 0;
 	padding-right: 30px;
 }
-.slidebtn-next
+.herotestimonial .slidebtn-next
 {
 	right: 0;
 	padding-left: 30px;
 }
-.slidebtn-next .caret,
-.slidebtn-prev .caret
+.herotestimonial .slidebtn-next .caret,
+.herotestimonial .slidebtn-prev .caret
 {
 	border-width: 5px;
 	border-style: solid;
 	border-color: transparent;
 }
-.slidebtn-prev .caret
+.herotestimonial .slidebtn-prev .caret
 {
 	border-right-color: #7e645a;
 }
-.slidebtn-next .caret
+.herotestimonial .slidebtn-next .caret
 {
 	border-left-color: #7e645a;
 }

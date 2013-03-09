@@ -23,14 +23,14 @@ define(['jquery', 'text!./index.html'], function($, template) {
 			function adsorbSearch() {
 				$navContainerInner.append($nav)
 				$navContainer.show();
-				$searchbar.hide();
+				$searchbar.css('visibility', 'hidden');
 				$headerFormContainer.append($searchForm);
 			};
 
 			function disAdsorbSearch() {
 				$navContainer.hide();
 				$headerh1.after($nav);
-				$searchbar.show();
+				$searchbar.css('visibility', 'visible');
 				$searchbarFormContainer.append($searchForm);
 			};
 

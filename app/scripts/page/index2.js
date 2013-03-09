@@ -26,17 +26,20 @@
 
     require(['require'
         , 'jquery'
-        , 'widget/searchbaradsorb/main'
+        , 'widget/searchform/main'
         , 'widget/language/main'
+        , 'widget/slide/main'
         , 'modernizr']
-        , function(parentRequire, $, searchbarAdsorb, language) {
+        , function(parentRequire, $, searchForm, language, slide) {
         $(document).ready(function() {
             // DOM elements count
             console.log(document.getElementsByTagName("*").length);
-            // Search bar adsorb
-            searchbarAdsorb.init(1);
+            // Search form
+            searchForm.init(1);
             // Initial language settings
             language.init();
+            // Slide show
+            slide.init();
         });
     });
 
