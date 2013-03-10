@@ -1,12 +1,13 @@
 {
   "author": "",
-  "name": "banicci",
+  "name": "Tradesparq",
   "version": "1.0.0",
   "dependencies": {
-    "grunt": "*",
+    "grunt": "~0.4.0",
     "grunt-contrib": "*",
     "grunt-contrib-imagemin": "*",
-    "grunt-contrib-cssmin": "*"
+    "grunt-contrib-cssmin": "*",
+    "grunt-string-replace": "*"
   },
   "devDependencies": {
     "grunt-contrib-imagemin": "~0.1.0"
