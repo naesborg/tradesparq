@@ -364,7 +364,7 @@ define('text',['module'], function (module) {
     }
     return text;
 });
-define('text!widget/searchform/index.html',[],function () { return '<form class="form-search">\n    <div class="input-append">\n        <input type="text" name="user_search" class="span2 search-query opensans" placeholder="Search for products, people &amp; company">\n        <button type="submit" class="">Search</button>\n    </div>\n</form>\n';});
+define('text!widget/searchform/index.html',[],function () { return '<form class="form-search">\r\n    <div class="input-append">\r\n        <input type="text" name="user_search" class="span2 search-query opensans" placeholder="Search for products, people &amp; company">\r\n        <button type="submit" class="">Search</button>\r\n    </div>\r\n</form>\r\n';});
 
 define('widget/searchform/main',['jquery', 'text!./index.html'], function($, template) {
 
@@ -539,7 +539,7 @@ define('widget/blurb/main',[],function(){
 		return "";
 	};
 });
-define('text!widget/language/index.html',[],function () { return '<div class="btn-group">\n    <a class="btn dropdown-toggle" data-toggle="dropdown" href="#"><span class="flag-en"></span>English<span class="caret"></span>\n    </a>\n    <ul class="dropdown-menu">\n        <li class="dropdown-arrow"><span class="caret"></span></li>\n        <li>\n            <a href=""><span data-lng="en" class="flag-en"></span>English</a>\n        </li>\n        <li>\n            <a href=""><span data-lng="cn" class="flag-cn"></span>Chinese</a>\n        </li>\n    </ul>\n</div>\n';});
+define('text!widget/language/index.html',[],function () { return '<div class="btn-group">\r\n    <a class="btn dropdown-toggle" data-toggle="dropdown" href="#"><span class="flag-en"></span>English<span class="caret"></span>\r\n    </a>\r\n    <ul class="dropdown-menu">\r\n        <li class="dropdown-arrow"><span class="caret"></span></li>\r\n        <li>\r\n            <a href=""><span data-lng="en" class="flag-en"></span>English</a>\r\n        </li>\r\n        <li>\r\n            <a href=""><span data-lng="cn" class="flag-cn"></span>Chinese</a>\r\n        </li>\r\n    </ul>\r\n</div>\r\n';});
 
 define('widget/language/main',["jquery", "jquery.cookie", "../blurb/main", "text!./index.html"], function($, cookie, blurbs, template) {
 
