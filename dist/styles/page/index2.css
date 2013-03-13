@@ -626,7 +626,7 @@ header {
   z-index: 10;
   width: 100%;
   background: rgba(255, 255, 255, 0.6);
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
   background-image: linear-gradient(bottom, rgba(0, 0, 0, 0.07) 0%, rgba(255, 255, 255, 0.07) 100%);
   background-image: -o-linear-gradient(bottom, rgba(0, 0, 0, 0.07) 0%, rgba(255, 255, 255, 0.07) 100%);
   background-image: -moz-linear-gradient(bottom, rgba(0, 0, 0, 0.07) 0%, rgba(255, 255, 255, 0.07) 100%);
@@ -887,19 +887,19 @@ nav ul > li.active > a {
   min-height: 756px;
 }
 .herotestimonial > ul > li.slide-1 {
-  background-image: url(../images/fg_slide1.png), url(../images/bg_slide1.png);
-  background-position: 88% top, center top;
+  background-image: url(../slide/fg_slide1.png), url(../slide/bg_slide1.jpg);
+  background-position: 90% top, center top;
   background-repeat: no-repeat, no-repeat;
   min-height: 756px;
 }
 .herotestimonial > ul > li.slide-2 {
-  background-image: url(../images/fg_slide2.png), url(../images/bg_slide2.png);
+  background-image: url(../slide/fg_slide2.png), url(../slide/bg_slide2.jpg);
   background-position: 90% top, center top;
   background-repeat: no-repeat, no-repeat;
   min-height: 756px;
 }
 .herotestimonial > ul > li.slide-3 {
-  background-image: url(../images/bg_slide3.png);
+  background-image: url(../slide/bg_slide3.jpg);
   background-position: center top;
   background-repeat: no-repeat;
   min-height: 756px;
@@ -1017,7 +1017,7 @@ nav ul > li.active > a {
 /* + Customs data */
 .freecustoms {
   background-color: #444b52;
-  padding: 30px 0 90px 0;
+  padding: 40px 0 80px 0;
   color: #fff;
 }
 .freecustoms > div {
@@ -1093,7 +1093,7 @@ nav ul > li.active > a {
   height: 349px;
   border: 2px solid #fff;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.31);
-  background: url(../images/bg_media.png) center top no-repeat;
+  background: url(../images/bg_media.jpg) center top no-repeat;
 }
 .cedric > h2 {
   color: #252531;
@@ -1146,6 +1146,9 @@ nav ul > li.active > a {
   border-radius: 5px;
   padding: 15px 20px;
   width: 23%;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -o-box-sizing: border-box;
   box-sizing: border-box;
   margin-left: 25px;
 }
@@ -1177,13 +1180,13 @@ nav ul > li.active > a {
   min-height: 255px;
 }
 .categorization-suppliers > .categorization-pic {
-  background: url(../images/bg_suppliers.png) center top no-repeat;
+  background: url(../images/bg_suppliers.jpg) center top no-repeat;
 }
 .categorization-enterprise > .categorization-pic {
-  background: url(../images/bg_enterprise.png) center top no-repeat;
+  background: url(../images/bg_enterprise.jpg) center top no-repeat;
 }
 .categorization-supplychain > .categorization-pic {
-  background: url(../images/bg_supplychain.png) center top no-repeat;
+  background: url(../images/bg_supplychain.jpg) center top no-repeat;
 }
 .categorization ul > li > h3 {
   font-size: 20px;
@@ -1286,13 +1289,13 @@ ul.extlogin-links > li.extlogin-sina > a {
   min-height: 163px;
 }
 .howitworks-search {
-  background: url(../images/bg_search.png) center top no-repeat;
+  background: url(../images/bg_search.jpg) center top no-repeat;
 }
 .howitworks-filter {
-  background: url(../images/bg_filter.png) center top no-repeat;
+  background: url(../images/bg_filter.jpg) center top no-repeat;
 }
 .howitworks-find {
-  background: url(../images/bg_find.png) center top no-repeat;
+  background: url(../images/bg_find.jpg) center top no-repeat;
 }
 .howitworks > ul > li > .howitworks-pic > .howitworks-item {
   padding: 20px 12px 20px 70px;
@@ -1332,23 +1335,21 @@ ul.extlogin-links > li.extlogin-sina > a {
 .cedric {
   background-color: #fff;
 }
-.customsdata {
-  background: url(../images/bg_freecustomsdata.png) center top no-repeat;
+.freecustoms {
+  background: url(../images/bg_freecustomsdata.jpg) center top no-repeat;
 }
 .herotestimonial > ul {
   min-height: 856px;
 }
 .herotestimonial > ul > li.slide-1 {
-  background-image: url(../images/fg_slide_r1.png), url(../images/bg_slide_r1.png);
-  background-position: 50% top, center top;
+  background-image: url(../slide/fg_slide_r1.png), url(../slide/bg_slide_r1.jpg);
+  background-position: 120% top, center top;
   min-height: 856px;
 }
-.herotestimonial > ul > li.slide-2 {
-  background-image: url(../images/fg_slide_r2.png), url(../images/bg_slide_r2.png);
-  background-position: 50% top, center top;
-  min-height: 856px;
+.herotestimonial-des {
+  padding-top: 260px;
 }
 .layout-up {
-  margin-top: -346px;
+  margin-top: -356px;
   position: relative;
 }

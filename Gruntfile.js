@@ -107,7 +107,8 @@ module.exports = function(grunt) {
           optimizationLevel: 3
         },
         files: {
-          'dist/styles/images/': 'app/styles/images/**/*'
+          'dist/styles/images/': 'app/styles/images/**/*',
+          'dist/styles/slide/': 'app/styles/slide/**/*'
         }
       }
     },
