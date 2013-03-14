@@ -1,121 +1,111 @@
-/* + Slide */
-.slide > ul > li
-{
-	display: none;
-}
-.slide > ul > li.slideactive
-{
-	display: block;
-}
 /* - Hero testimonial */
 .herotestimonial
 {
 	position: relative;
-}
-.herotestimonial > ul
-{
-	margin: 0;
-	min-height: 756px;
-}
-.herotestimonial > ul > li.slide-1
-{
-	background-image: url(../slide/fg_slide1.png), url(../slide/bg_slide1.jpg);
-	background-position: 90% top, center top;
-	background-repeat: no-repeat, no-repeat;
-	min-height: 756px;
-}
-.herotestimonial > ul > li.slide-2
-{
-	background-image: url(../slide/fg_slide2.png), url(../slide/bg_slide2.jpg);
-	background-position: 90% top, center top;
-	background-repeat: no-repeat, no-repeat;
-	min-height: 756px;
-}
-.herotestimonial > ul > li.slide-3
-{
-	background-image: url(../slide/bg_slide3.jpg);
-	background-position: center top;
-	background-repeat: no-repeat;
-	min-height: 756px;
-}
-.herotestimonial-des
-{
-	padding: 200px 100px 0;
-	width: 350px;
-	text-align: center;
-	position: relative;
-}
-.herotestimonial-des > p
-{
-	color: #fff;
-	font-size: 28px;
-	font-weight: lighter;
-	line-height: 1.2em;
-}
-.herotestimonial-des > .btn
-{
-	opacity: .8;
-	padding: 16px 40px;
-	font-size: 19px;
-	margin: 20px 0 0;
-}
-.herotestimonial-des > .btn > .caret
-{
-	margin: 5px 0 0 12px;
-	border-width: 6px;
-	border-style: solid;
-	border-color: transparent;
-	border-left-color: #333;
-}
-.herotestimonial-des > .btn.btn-primary > .caret
-{
-	border-left-color: #fff;
-}
-/* - Slide Button */
-.herotestimonial > .slidebtn
-{
-	width: 100%;
-	position: absolute;
-	top: 0;
-}
-.herotestimonial > .slidebtn > div
-{
-	position: relative;
-}
-.herotestimonial .slidebtn-prev,
-.herotestimonial .slidebtn-next
-{
-	background: #fff;
-	border: 1px solid #ddd;
-	opacity: .5;
-	padding: 8px 25px;
-	border-radius: 20px;
-	line-height: 0;
-	position: absolute;
-	top: 260px;
-}
-.herotestimonial .slidebtn-prev
-{
-	left: 0;
-	padding-right: 30px;
-}
-.herotestimonial .slidebtn-next
-{
-	right: 0;
-	padding-left: 30px;
-}
-.herotestimonial .slidebtn-next .caret,
-.herotestimonial .slidebtn-prev .caret
-{
-	border-width: 5px;
-	border-style: solid;
-	border-color: transparent;
-}
-.herotestimonial .slidebtn-prev .caret
-{
-	border-right-color: #7e645a;
-}
-.herotestimonial .slidebtn-next .caret
-{
-	border-left-color: #7e645a;
+
+	/* + Slide */
+	&.slide > ul > li
+	{
+		display: none;
+
+		&.slideactive
+		{
+			display: block;
+		}
+	}
+
+	> ul
+	{
+		margin: 0;
+		min-height: 756px;
+
+		> li .herotestimonial-des
+		{
+			padding: 200px 100px 0;
+			width: 350px;
+			text-align: center;
+			position: relative;
+
+			> p
+			{
+				color: #fff;
+				font-size: 28px;
+				font-weight: lighter;
+				line-height: 1.2em;
+			}
+			> .btn
+			{
+				opacity: .8;
+				padding: 16px 40px;
+				font-size: 19px;
+				margin: 20px 0 0;
+
+				> .caret
+				{
+					margin: 5px 0 0 12px;
+					border-width: 6px;
+					border-style: solid;
+					border-color: transparent;
+					border-left-color: #333;
+				}
+				&.btn-primary > .caret
+				{
+					border-left-color: #fff;
+				}
+			}
+		}
+	}
+
+	/* - Slide Button */
+	> .slidebtn
+	{
+		width: 100%;
+		position: absolute;
+		top: 0;
+
+		> div
+		{
+			position: relative;
+
+			> a.slidebtn-prev,
+			> a.slidebtn-next
+			{
+				background: #fff;
+				border: 1px solid #ddd;
+				opacity: .5;
+				padding: 8px 25px;
+				border-radius: 20px;
+				line-height: 0;
+				position: absolute;
+				top: 260px;
+
+				> .caret
+				{
+					border-width: 5px;
+					border-style: solid;
+					border-color: transparent;
+				}
+			}
+			> a.slidebtn-prev
+			{
+				left: 0;
+				padding-right: 30px;
+
+				> .caret
+				{
+					border-right-color: #7e645a;
+				}
+			}
+			> a.slidebtn-next
+			{
+				right: 0;
+				padding-left: 30px;
+
+				> .caret
+				{
+					border-left-color: #7e645a;
+				}
+			}
+		}
+	}
 }
