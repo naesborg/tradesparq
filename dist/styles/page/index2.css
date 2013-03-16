@@ -1330,7 +1330,7 @@ nav ul > li > a {
 .herotestimonial > ul > li.slide-1.slideactive {
   background-image: url(../slide/fg_slide_r1.png), url(../slide/bg_slide_r1.jpg);
   background-repeat: no-repeat, no-repeat;
-  background-position: 110% 56px, center top;
+  background-position: 140% top, center top;
 }
 @-webkit-keyframes slide-parallax {
   100% {
