@@ -544,26 +544,28 @@ define('text!widget/language/index.html',[],function () { return '<div class="bt
 define('widget/language/main',["jquery", "jquery.cookie", "../blurb/main", "text!./index.html"], function($, cookie, blurbs, template) {
 
 	var LANGUAGE_DEFAULT = 'en';
+	var LANGUAGE_CLASSES = 'en cn';
+
 
 	return {
 		'init': function() {
-
-			var lng_cookie = $.cookie('lng');
-			var lng = lng_cookie || LANGUAGE_DEFAULT;
-
-			if (lng) {
+			
+			function update(lng){
+				if(!lng){
+					lng = LANGUAGE_DEFAULT;
+				}
 				// Set language class for styles
-				$('body').addClass(lng);
+				$('body').removeClass(LANGUAGE_CLASSES).addClass(lng);
 				// Set language text
-				$("[data-blurb]").each(function(i, e) {
+				$("[data-blurb]").each(function(i, e){
 					var $this = $(this);
 					var blurb = $this.data('blurb');
-					if (blurb) {
+					if(blurb){
 						$this.html(blurbs(blurb, lng));
 					}
 				})
-			}
-
+			};
+			
 			var $template = $(template);
 			// Attach Events
 			$template.on("click", "[data-lng]", function(e) {
@@ -571,7 +573,7 @@ define('widget/language/main',["jquery", "jquery.cookie", "../blurb/main", "text
 				var $this = $(this);
 				var toLng = $this.data('lng');
 				$.cookie('lng', toLng);
-				location.reload(true);
+				update(toLng);
 			})
 				.on("click", " > a.btn", function(e) {
 				e.preventDefault();
@@ -579,7 +581,9 @@ define('widget/language/main',["jquery", "jquery.cookie", "../blurb/main", "text
 				$this.next("ul").toggle(100);
 			});
 			// Append to DOM
-			$(".lng-selector").append($template);
+			$(".fn-lng-selector").append($template);
+
+			update($.cookie('lng'));
 
 		}
 	};
