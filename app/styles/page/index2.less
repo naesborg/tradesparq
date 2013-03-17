@@ -1,3 +1,5 @@
+@import url(../../scripts/vendor/fancybox/2.1.3/jquery.fancybox.css);
+
 @import "../moduler/font.less";
 @import "../moduler/base.less";
 @import "../moduler/global.less";
@@ -12,9 +14,10 @@
 @import "../moduler/freecustoms.less";
 @import "../moduler/cedric.less";
 @import "../moduler/contentindexing.less";
+@import "../moduler/extlogin.less";
+@import "../moduler/signup.less";
 
 @import "../moduler/categorization.less";
-@import "../moduler/extlogin.less";
 @import "../moduler/howitworks.less";
 
 
@@ -29,61 +32,40 @@
 .herotestimonial
 {
 
-	> ul > li
+	> ul
 	{
-		&.slide-1
-		{
-			min-height: 856px;
-			&.slideactive
-			{
-				background-image: url(../slide/fg_slide_r1.png), url(../slide/bg_slide_r1.jpg);
-				background-repeat: no-repeat, no-repeat;
-				background-position: 130% top, center top;
-			}
-		}
-		@-webkit-keyframes slide-parallax {
-		    100%    {	background-position: 120% top, center top;	}
-		}
-		@-moz-keyframes slide-parallax {
-		    100%    {	background-position: 120% top, center top;	}
-		}
-		@-o-keyframes slide-parallax {
-		    100%    {	background-position: 120% top, center top;	}
-		}
-		@keyframes slide-parallax {
-		    100%    {	background-position: 120% top, center top;	}
-		}
-		&.slideactive
-		{
-	        -webkit-animation-duration: .4s;
-	        -webkit-animation-delay: 0.2s;
-	        -webkit-animation-timing-function: ease-out;
-	        -webkit-animation-fill-mode: both;
-	        -moz-animation-duration: .4s;
-	        -moz-animation-delay: 0.2s;
-	        -moz-animation-timing-function: ease-out;
-	        -moz-animation-fill-mode: both;
-	        -ms-animation-duration: .4s;
-	        -ms-animation-delay: 0.2s;
-	        -ms-animation-timing-function: ease-out;
-	        -ms-animation-fill-mode: both;
-	        -o-animation-duration: .4s;
-	        -o-animation-delay: 0.2s;
-	        -o-animation-timing-function: ease-out;
-	        -o-animation-fill-mode: both;
-	        animation-duration: .4s;
-	        animation-delay: 0.2s;
-	        animation-timing-function: ease-out;
-	        animation-fill-mode: both;
+		min-height: 856px;
 
-		    -webkit-animation-name: slide-parallax;
-		    -moz-animation-name: slide-parallax;
-		    -o-animation-name: slide-parallax;
-		    animation-name: slide-parallax;
-		}
-		.herotestimonial-des
+		> li
 		{
-			padding-top: 260px;
+			&.slide-1
+			{
+				background-image: url(../slide/bg_slide_r1.jpg);
+				background-repeat: no-repeat;
+				background-position: 90% top;
+
+				> div
+				{
+					min-height: 856px;
+					background-image: url(../slide/fg_slide_r1.png);
+					background-repeat: no-repeat;
+					background-position: 125% top;
+				}
+
+				&.slideactive
+				{
+					background-position: center top;
+
+					> div
+					{
+						background-position: 120% top;
+					}
+				}
+			}
+			.herotestimonial-des
+			{
+				padding-top: 260px;
+			}
 		}
 	}
 }

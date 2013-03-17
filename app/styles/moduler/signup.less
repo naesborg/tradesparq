@@ -1,5 +1,61 @@
 .signup
 {
-	width: 800px;
-	height: 400px;
+	> h2
+	{
+		margin: 0 0 30px;
+		font-size: 17px;
+	}
+
+	> div
+	{
+
+		&.signupform > form
+		{
+			width: 360px;
+			margin: 0;
+
+			&.form-horizontal .controls
+			{
+				margin-left: 15px;
+
+				> input
+				{
+					width: 85%;
+				}
+				> button
+				{
+					float: left;
+					opacity: .8;
+				}
+				> label
+				{
+					float: left;
+					margin: 10px 0 0 30px;
+					white-space: nowrap;
+				}
+			}
+		}
+
+		&.servicelogin
+		{
+			width: 320px;
+			padding: 15px 0 30px 36px;
+			border-left: 1px solid #ccc;
+
+			> p
+			{
+				font-size: 17px;
+				font-weight: bold;
+			}
+
+			ul.extlogin-links
+			{
+				> li
+				{
+					margin-top: 15px;
+				}
+			}
+		}
+	}
+
 }

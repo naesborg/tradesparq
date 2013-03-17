@@ -30,8 +30,9 @@
         , 'widget/language/main'
         , 'widget/account/main'
         , 'widget/slide/main'
+        , 'widget/parallaxscroll/main'
         , 'modernizr']
-        , function(parentRequire, $, searchForm, language, account, slide) {
+        , function(parentRequire, $, searchForm, language, account, parallaxScroll, slide) {
         $(document).ready(function() {
             // DOM elements count
             console.log(document.getElementsByTagName("*").length);
@@ -43,6 +44,8 @@
             account.init();
             // Slide show
             slide.init();
+            // Parallax Scroll
+            parallaxScroll.init();
         });
     });
 

@@ -1,8 +1,5 @@
 define(["jquery", "../signup/main",  "text!./index.html"], function($, signup, template) {
 
-
-
-
 	return {
 		'init': function() {
 			

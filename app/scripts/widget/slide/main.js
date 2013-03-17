@@ -7,6 +7,16 @@ define(['jquery'], function() {
 		var $slideBtnPrev = $slide.find(".slidebtn-prev");
 		var $slideBtnNext = $slide.find(".slidebtn-next");
 
+		function slideEffect($slideActive, $slidePass){
+			if($slidePass){
+				$slidePass.removeClass(ACTIVECLASS);
+			}
+			if($slideActive){
+				$slideActive.addClass(ACTIVECLASS);
+			}
+		};
+		slideEffect($slide.find("ul > li:eq(0)"));
+
 		var slideStatusCheck = (function fn() {
 			var $slideActive = $slideContent.find('.' + ACTIVECLASS);
 			if($slideActive.prev().length <= 0){
@@ -28,8 +38,7 @@ define(['jquery'], function() {
 			var $slideActive = $slideContent.find('.' + ACTIVECLASS);
 			var $slidePrev = $slideActive.prev();
 			if ($slidePrev.length > 0) {
-				$slideActive.removeClass(ACTIVECLASS);
-				$slidePrev.addClass(ACTIVECLASS);
+				slideEffect($slidePrev, $slideActive);
 				slideStatusCheck();
 			}
 			e.preventDefault();
@@ -38,8 +47,7 @@ define(['jquery'], function() {
 			var $slideActive = $slideContent.find('.' + ACTIVECLASS);
 			var $slideNext = $slideActive.next();
 			if ($slideNext.length > 0) {
-				$slideActive.removeClass(ACTIVECLASS);
-				$slideNext.addClass(ACTIVECLASS);
+				slideEffect($slideNext, $slideActive);
 				slideStatusCheck();
 			}
 			e.preventDefault();

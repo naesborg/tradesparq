@@ -15,83 +15,84 @@
 @import "../moduler/cedric.less";
 @import "../moduler/contentindexing.less";
 @import "../moduler/signup.less";
+@import "../moduler/extlogin-links.less";
 
 @import "../moduler/banner.less";
 
 .herotestimonial
 {
-	> ul > li
+	> ul
 	{
-		&.slide-1
+		min-height: 756px;
+
+		> li
 		{
-			min-height: 756px;
-			&.slideactive
+			&.slide-1
 			{
-				background-image: url(../slide/fg_slide1.png), url(../slide/bg_slide1.jpg);
-				background-position: 100% top, center top;
-				background-repeat: no-repeat, no-repeat;
+				background-image: url(../slide/bg_slide1.jpg);
+				background-position: 90% top;
+				background-repeat: no-repeat;
+
+				> div
+				{
+					min-height: 756px;
+					background-image: url(../slide/fg_slide1.png);
+					background-position: 95% top;
+					background-repeat: no-repeat;
+				}
+
+				&.slideactive
+				{
+					background-position: center top;
+
+					> div
+					{
+						background-position: 90% top;
+					}
+				}
 			}
-		}
-		&.slide-2
-		{
-			min-height: 756px;
-			&.slideactive
+			&.slide-2
 			{
-				background-image: url(../slide/fg_slide2.png), url(../slide/bg_slide2.jpg);
-				background-position: 100% top, center top;
-				background-repeat: no-repeat, no-repeat;
+				background-image: url(../slide/bg_slide2.jpg);
+				background-position: 90% top;
+				background-repeat: no-repeat;
+
+				>div
+				{
+					min-height: 756px;
+					background-image: url(../slide/fg_slide2.png);
+					background-position: 95% top;
+					background-repeat: no-repeat;				
+				}
+
+				&.slideactive
+				{
+					background-position: center top;
+
+					> div
+					{
+						background-position: 90% top;
+					}
+				}
 			}
-		}
-		&.slide-3
-		{
-			min-height: 756px;
-			&.slideactive
+			&.slide-3
 			{
 				background-image: url(../slide/bg_slide3.jpg);
 				background-position: center top;
 				background-repeat: no-repeat;
+
+				>div
+				{
+					min-height: 756px;
+				}
+
+				&.slideactive
+				{
+					background-position: center top;
+				}
 			}
 		}
-		@-webkit-keyframes slide-parallax {
-		    100%    {	background-position: 90% top, center top;	}
-		}
-		@-moz-keyframes slide-parallax {
-		    100%    {	background-position: 90% top, center top;	}
-		}
-		@-o-keyframes slide-parallax {
-		    100%    {	background-position: 90% top, center top;	}
-		}
-		@keyframes slide-parallax {
-		    100%    {	background-position: 90% top, center top;	}
-		}
-		&.slideactive
-		{
-	        -webkit-animation-duration: .4s;
-	        -webkit-animation-delay: 0s;
-	        -webkit-animation-timing-function: ease-out;
-	        -webkit-animation-fill-mode: both;
-	        -moz-animation-duration: .4s;
-	        -moz-animation-delay: 0s;
-	        -moz-animation-timing-function: ease-out;
-	        -moz-animation-fill-mode: both;
-	        -ms-animation-duration: .4s;
-	        -ms-animation-delay: 0s;
-	        -ms-animation-timing-function: ease-out;
-	        -ms-animation-fill-mode: both;
-	        -o-animation-duration: .4s;
-	        -o-animation-delay: 0s;
-	        -o-animation-timing-function: ease-out;
-	        -o-animation-fill-mode: both;
-	        animation-duration: .4s;
-	        animation-delay: 0s;
-	        animation-timing-function: ease-out;
-	        animation-fill-mode: both;
-	        
-		    -webkit-animation-name: slide-parallax;
-		    -moz-animation-name: slide-parallax;
-		    -o-animation-name: slide-parallax;
-		    animation-name: slide-parallax;
-		}
+
 	}
 }
 .layout-up-container

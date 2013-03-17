@@ -28,9 +28,11 @@
         , 'jquery'
         , 'widget/searchform/main'
         , 'widget/language/main'
+        , 'widget/account/main'
         , 'widget/slide/main'
+        , 'widget/parallaxscroll/main'
         , 'modernizr']
-        , function(parentRequire, $, searchForm, language, slide) {
+        , function(parentRequire, $, searchForm, language, account, slide, parallaxScroll) {
         $(document).ready(function() {
             // DOM elements count
             console.log(document.getElementsByTagName("*").length);
@@ -38,8 +40,12 @@
             searchForm.init(1);
             // Initial language settings
             language.init();
+            // Account - login/signup
+            account.init();
             // Slide show
             slide.init();
+            // Parallax Scroll
+            parallaxScroll.init();
         });
     });
 

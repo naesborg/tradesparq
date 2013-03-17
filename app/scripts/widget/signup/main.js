@@ -20,7 +20,9 @@ define(["jquery", "fancybox", "text!./index.html"], function($, fancybox, templa
 				'transitionIn'	:	'elastic',
 				'transitionOut'	:	'elastic',
 				'speedIn'		:	600, 
-				'speedOut'		:	200, 
+				'speedOut'		:	200,
+				'padding'		: 	30,
+				'scrolling'		: 	'no',
 				'overlayShow'	:	true
 			});
 

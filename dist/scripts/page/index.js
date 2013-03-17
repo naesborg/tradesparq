@@ -2575,7 +2575,7 @@ define('widget/language/main',["jquery", "jquery.cookie", "../blurb/main", "text
 }(window, document, jQuery));
 define("fancybox", function(){});
 
-define('text!widget/signup/index.html',[],function () { return '<div class="cf inlineblock signup">\n\t<h2>Sign up now for free!</h2>\n\t<div class="signupform col-l">\n\t\t<form class="form-horizontal">\n\t\t  <div class="control-group">\n\t\t    <label class="control-label" for="inputEmail">Email</label>\n\t\t    <div class="controls">\n\t\t      <input type="text" id="inputEmail" placeholder="Email">\n\t\t    </div>\n\t\t  </div>\n\t\t  <div class="control-group">\n\t\t    <label class="control-label" for="inputPassword">Password</label>\n\t\t    <div class="controls">\n\t\t      <input type="password" id="inputPassword" placeholder="Password">\n\t\t    </div>\n\t\t  </div>\n\t\t  <div class="control-group">\n\t\t    <div class="controls">\n\t\t      <label class="checkbox">\n\t\t        <input type="checkbox"> Remember me\n\t\t      </label>\n\t\t      <button type="submit" class="btn">Sign in</button>\n\t\t    </div>\n\t\t  </div>\n\t\t</form>\n\t</div>\n\t<div class="servicelogin col-l">\n\t\t<p>Or...Login with you favorite service</p>\n        <ul class="col-r extlogin-links hor">\n            <li class="extlogin-facebook">\n                <a href="//www.facebook.com"></a>\n            </li>\n            <li class="extlogin-google">\n                <a href="//www.google.com"></a>\n            </li>\n            <li class="extlogin-yahoo">\n                <a href="//www.yahoo.com"></a>\n            </li>\n            <li class="extlogin-linkedin">\n                <a href="//www.linkedin.com"></a>\n            </li>\n            <li class="extlogin-tencent">\n                <a href="//www.tencent.com"></a>\n            </li>\n            <li class="extlogin-sina">\n                <a href="//www.sina.com"></a>\n            </li>\n        </ul>\n\t</div>\n</div>';});
+define('text!widget/signup/index.html',[],function () { return '<div class="cf inlineblock signup">\n\t<h2>Sign up now for free!</h2>\n\t<div class="signupform col-l">\n\t\t<form class="form-horizontal">\n\t\t  <div class="control-group">\n\t\t    <div class="controls">\n\t\t      <input type="text" required id="inputName" placeholder="Name">\n\t\t    </div>\n\t\t  </div>\n\t\t  <div class="control-group">\n\t\t    <div class="controls">\n\t\t      <input type="email" name="email" required id="inputEmail" placeholder="Email">\n\t\t    </div>\n\t\t  </div>\n\t\t  <div class="control-group">\n\t\t    <div class="controls">\n\t\t      <input type="password" required id="inputPassword" placeholder="Password">\n\t\t    </div>\n\t\t  </div>\n\t\t  <div class="control-group">\n\t\t    <div class="controls">\n\t\t      <input type="password" required id="inputPasswordConfirm" placeholder="Confirm">\n\t\t    </div>\n\t\t  </div>\n\t\t  <div class="control-group">\n\t\t    <div class="controls cf">\n\t\t      <button type="submit" class="btn btn-primary btn-large">Join</button>\n\t\t      <label class="checkbox">\n\t\t        <input type="checkbox">I agree to the terms of use.\n\t\t      </label>\n\t\t    </div>\n\t\t  </div>\n\t\t</form>\n\t</div>\n\t<div class="servicelogin col-l">\n\t\t<p>Or...Login with you favorite service</p>\n        <ul class="col-r extlogin-links hor">\n            <li class="extlogin-facebook">\n                <a href="//www.facebook.com"></a>\n            </li>\n            <li class="extlogin-google">\n                <a href="//www.google.com"></a>\n            </li>\n            <li class="extlogin-yahoo">\n                <a href="//www.yahoo.com"></a>\n            </li>\n            <li class="extlogin-linkedin">\n                <a href="//www.linkedin.com"></a>\n            </li>\n            <li class="extlogin-tencent">\n                <a href="//www.tencent.com"></a>\n            </li>\n            <li class="extlogin-sina">\n                <a href="//www.sina.com"></a>\n            </li>\n        </ul>\n\t</div>\n</div>';});
 
 define('widget/signup/main',["jquery", "fancybox", "text!./index.html"], function($, fancybox, template) {
 
@@ -2599,7 +2599,9 @@ define('widget/signup/main',["jquery", "fancybox", "text!./index.html"], functio
 				'transitionIn'	:	'elastic',
 				'transitionOut'	:	'elastic',
 				'speedIn'		:	600, 
-				'speedOut'		:	200, 
+				'speedOut'		:	200,
+				'padding'		: 	30,
+				'scrolling'		: 	'no',
 				'overlayShow'	:	true
 			});
 
@@ -2609,9 +2611,6 @@ define('widget/signup/main',["jquery", "fancybox", "text!./index.html"], functio
 define('text!widget/account/index.html',[],function () { return '<a href="#" class="bold mr-15">Login</a>\n<div class="btn-group">\n    <button class="btn btn-primary opensans txt-xxl bold">Join now</button>\n    <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">\n        <span class="caret"></span>\n    </button>\n    <ul class="dropdown-menu">\n    <!-- dropdown menu links -->\n    </ul>\n</div>\n';});
 
 define('widget/account/main',["jquery", "../signup/main",  "text!./index.html"], function($, signup, template) {
-
-
-
 
 	return {
 		'init': function() {
@@ -2637,6 +2636,16 @@ define('widget/slide/main',['jquery'], function() {
 		var $slideBtnPrev = $slide.find(".slidebtn-prev");
 		var $slideBtnNext = $slide.find(".slidebtn-next");
 
+		function slideEffect($slideActive, $slidePass){
+			if($slidePass){
+				$slidePass.removeClass(ACTIVECLASS);
+			}
+			if($slideActive){
+				$slideActive.addClass(ACTIVECLASS);
+			}
+		};
+		slideEffect($slide.find("ul > li:eq(0)"));
+
 		var slideStatusCheck = (function fn() {
 			var $slideActive = $slideContent.find('.' + ACTIVECLASS);
 			if($slideActive.prev().length <= 0){
@@ -2658,8 +2667,7 @@ define('widget/slide/main',['jquery'], function() {
 			var $slideActive = $slideContent.find('.' + ACTIVECLASS);
 			var $slidePrev = $slideActive.prev();
 			if ($slidePrev.length > 0) {
-				$slideActive.removeClass(ACTIVECLASS);
-				$slidePrev.addClass(ACTIVECLASS);
+				slideEffect($slidePrev, $slideActive);
 				slideStatusCheck();
 			}
 			e.preventDefault();
@@ -2668,8 +2676,7 @@ define('widget/slide/main',['jquery'], function() {
 			var $slideActive = $slideContent.find('.' + ACTIVECLASS);
 			var $slideNext = $slideActive.next();
 			if ($slideNext.length > 0) {
-				$slideActive.removeClass(ACTIVECLASS);
-				$slideNext.addClass(ACTIVECLASS);
+				slideEffect($slideNext, $slideActive);
 				slideStatusCheck();
 			}
 			e.preventDefault();
@@ -2687,6 +2694,36 @@ define('widget/slide/main',['jquery'], function() {
 		}
 	}
 
+});
+define('widget/parallaxscroll/main',['jquery'], function($){
+    
+
+    var MIN_HEIGHT = 600;
+    var SLIDE_PARALLAX_CLASS = "slide-parallax";
+
+	return {
+        'init': function(){
+		
+            var $window = $(window);
+
+            // Attach window scroll event
+            $window.scroll(function() {
+                    
+                var $activeSlide = $(".slide li.slideactive");
+                var scrollTop=$window.scrollTop();
+                if (scrollTop > MIN_HEIGHT) {
+                    return;
+                }
+
+                $activeSlide.css("backgroundPositionY", scrollTop/5);
+                $activeSlide.find(">div").css("backgroundPositionY", scrollTop/1.5);
+
+
+            });
+
+        }
+    };
+	
 });
 /* Modernizr 2.6.1 (Custom Build) | MIT & BSD
  * Build: http://modernizr.com/download/#-fontface-backgroundsize-borderimage-borderradius-boxshadow-flexbox-hsla-multiplebgs-opacity-rgba-textshadow-cssanimations-csscolumns-generatedcontent-cssgradients-cssreflections-csstransforms-csstransforms3d-csstransitions-applicationcache-canvas-canvastext-draganddrop-hashchange-history-audio-video-indexeddb-input-inputtypes-localstorage-postmessage-sessionstorage-websockets-websqldatabase-webworkers-geolocation-inlinesvg-smil-svg-svgclippaths-touch-webgl-shiv-mq-cssclasses-addtest-prefixed-teststyles-testprop-testallprops-hasevent-prefixes-domprefixes-load
@@ -2727,8 +2764,9 @@ define("modernizr", function(){});
         , 'widget/language/main'
         , 'widget/account/main'
         , 'widget/slide/main'
+        , 'widget/parallaxscroll/main'
         , 'modernizr']
-        , function(parentRequire, $, searchForm, language, account, slide) {
+        , function(parentRequire, $, searchForm, language, account, parallaxScroll, slide) {
         $(document).ready(function() {
             // DOM elements count
             console.log(document.getElementsByTagName("*").length);
@@ -2740,6 +2778,8 @@ define("modernizr", function(){});
             account.init();
             // Slide show
             slide.init();
+            // Parallax Scroll
+            parallaxScroll.init();
         });
     });
 
