@@ -32,16 +32,16 @@
         , 'widget/slide/main'
         , 'widget/parallaxscroll/main'
         , 'modernizr']
-        , function(parentRequire, $, searchForm, language, account, parallaxScroll, slide) {
+        , function(parentRequire, $, searchForm, Language, Account, parallaxScroll, slide) {
         $(document).ready(function() {
-            // DOM elements count
-            console.log(document.getElementsByTagName("*").length);
+            // Initial language settings
+            var language = Language();
+            language.$el.appendTo($(".fn-lng-selector"))
+            // Account - login/signup
+            var account = Account();
+            account.$el.appendTo($(".fn-account"));
             // Search form
             searchForm.init(0);
-            // Initial language settings
-            language.init();
-            // Account - login/signup
-            account.init();
             // Slide show
             slide.init();
             // Parallax Scroll

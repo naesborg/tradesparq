@@ -3,6 +3,16 @@
 {
 	background-color: #252531;
 	line-height: 70px;
+
+    -webkit-transition: opacity .4s ease-in;
+	-o-transition: opacity .4s ease-in;
+	-moz-transition: opacity .4s ease-in;
+	transition: opacity .4s ease-in;
+
+	&.inactive
+	{
+		opacity: 0;
+	}
 	
 	> h2
 	{

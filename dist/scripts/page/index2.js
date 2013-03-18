@@ -368,38 +368,40 @@ define('text!widget/searchform/index.html',[],function () { return '<form class=
 
 define('widget/searchform/main',['jquery', 'text!./index.html'], function($, template) {
 
-	// body...
+	var $window = $(window);
+	var HANG_NAV_ACTIVE_CLASS = "active";
+	var SEARCHBAR_INACTIVE_CLASS = "inactive";
+
 	return {
 		'init': function(page) {
 			page = page || 0;
 
-			var $window = $(window);
 			var flagAdsorbed;
 			var scrollTop = page === 0 ? $(".herotestimonial").outerHeight() - $("header").outerHeight() - $(".searchbar").outerHeight() - $(".mediavoice").outerHeight() : $(".herotestimonial").outerHeight() - $("header").outerHeight() - Math.abs(parseInt($(".herotestimonial").next("div").css('marginTop')));
 
 			var $header = $("header");
 			var $nav = $header.find("nav");
 			var $headerh1 = $header.find("h1");
-			var $navContainer = $header.find(".navcontainer");
-			var $navContainerInner = $navContainer.find(">div");
-			var $searchbar = $(".searchbar");
-			var $headerFormContainer = $header.find(".searchformcontainer");
-			var $searchbarFormContainer = $searchbar.find(".searchformcontainer");
+			var $navContainer = $header.find(".fn-navcontainer");
+			var $navContainerInner = $navContainer.find("> div");
+			var $searchbar = $(".fn-searchbar");
+			var $headerFormContainer = $header.find(".fn-searchformcontainer");
+			var $searchbarFormContainer = $searchbar.find(".fn-searchformcontainer");
 			var $searchForm = $(template);
 
 
 			function adsorbSearch() {
 				$navContainerInner.append($nav)
-				$navContainer.show();
-				$searchbar.css('visibility', 'hidden');
+				$navContainer.addClass(HANG_NAV_ACTIVE_CLASS);
+				$searchbar.addClass(SEARCHBAR_INACTIVE_CLASS);
 				$headerFormContainer.append($searchForm);
 			};
 
 			function disAdsorbSearch() {
-				$navContainer.hide();
-				$headerh1.after($nav);
-				$searchbar.css('visibility', 'visible');
 				$searchbarFormContainer.append($searchForm);
+				$searchbar.removeClass(SEARCHBAR_INACTIVE_CLASS);
+				$navContainer.removeClass(HANG_NAV_ACTIVE_CLASS);
+				$headerh1.after($nav);
 			};
 
 			// Append search form to search bar
@@ -410,7 +412,6 @@ define('widget/searchform/main',['jquery', 'text!./index.html'], function($, tem
 					if ($window.scrollTop() < scrollTop) {
 						return;
 					} else {
-						console.log('adsorb');
 						adsorbSearch();
 						flagAdsorbed = true;
 						return;
@@ -419,7 +420,6 @@ define('widget/searchform/main',['jquery', 'text!./index.html'], function($, tem
 					if ($window.scrollTop() > scrollTop) {
 						return;
 					} else {
-						console.log('disadsorb');
 						disAdsorbSearch();
 						flagAdsorbed = false;
 						return;
@@ -547,26 +547,26 @@ define('widget/language/main',["jquery", "jquery.cookie", "../blurb/main", "text
 	var LANGUAGE_CLASSES = 'en cn';
 
 
-	return {
-		'init': function() {
-			
-			function update(lng){
-				if(!lng){
-					lng = LANGUAGE_DEFAULT;
+	var w = function() {
+		function update(lng) {
+			if (!lng) {
+				lng = LANGUAGE_DEFAULT;
+			}
+			// Set language class for styles
+			$('body').removeClass(LANGUAGE_CLASSES).addClass(lng);
+			// Set language text
+			$("[data-blurb]").each(function(i, e) {
+				var $this = $(this);
+				var blurb = $this.data('blurb');
+				if (blurb) {
+					$this.html(blurbs(blurb, lng));
 				}
-				// Set language class for styles
-				$('body').removeClass(LANGUAGE_CLASSES).addClass(lng);
-				// Set language text
-				$("[data-blurb]").each(function(i, e){
-					var $this = $(this);
-					var blurb = $this.data('blurb');
-					if(blurb){
-						$this.html(blurbs(blurb, lng));
-					}
-				})
-			};
-			
-			var $template = $(template);
+			})
+		};
+
+		var $template = $(template);
+
+		(function init() {
 			// Attach Events
 			$template.on("click", "[data-lng]", function(e) {
 				e.preventDefault();
@@ -575,18 +575,22 @@ define('widget/language/main',["jquery", "jquery.cookie", "../blurb/main", "text
 				$.cookie('lng', toLng);
 				update(toLng);
 			})
-				.on("click", " > a.btn", function(e) {
+				.on("click", " > a", function(e) {
 				e.preventDefault();
 				var $this = $(this);
 				$this.next("ul").toggle(100);
 			});
-			// Append to DOM
-			$(".fn-lng-selector").append($template);
-
+			// Use current language setting in cookie
 			update($.cookie('lng'));
-
-		}
+		})();
+		
+		// Return object
+		var o = {};
+		o.$el = $template;
+		return o;
 	};
+
+	return w;
 });
 /*!
  * fancyBox - jQuery Plugin
@@ -2579,18 +2583,14 @@ define('text!widget/signup/index.html',[],function () { return '<div class="cf i
 
 define('widget/signup/main',["jquery", "fancybox", "text!./index.html"], function($, fancybox, template) {
 
-
-
-
 	return {
 		'init': function() {
-			// If exist, remove self
-			$("body > .signup").remove();
 			
 			var $template = $(template);
 			$template.on("click", "button.submit", function(){
 				var $this = $(this);
-				console.log('Signup submit');
+				// TODO: submit form
+				// ...
 			});
 			// Append to DOM
 			//$("body").append($template);
@@ -2612,20 +2612,26 @@ define('text!widget/account/index.html',[],function () { return '<a href="#" cla
 
 define('widget/account/main',["jquery", "../signup/main",  "text!./index.html"], function($, signup, template) {
 
-	return {
-		'init': function() {
-			
-			var $template = $(template);
+	var w = function(){
+		var $template = $(template);
+
+		(function init(){
+			// Attach events
 			$template.on("click", "button", function(){
 				var $this = $(this);
-				console.log('popup signup box');
 				signup.init();
 			});
-			// Append to DOM
-			$(".fn-account").append($template);
+		})();
 
-		}
+		// Return object
+		var o = {};
+		o.$el = $template;
+
+		return o;
 	};
+
+	return w;
+
 });
 define('widget/slide/main',['jquery'], function() {
 
@@ -2695,35 +2701,38 @@ define('widget/slide/main',['jquery'], function() {
 	}
 
 });
-define('widget/parallaxscroll/main',['jquery'], function($){
+define('widget/parallaxscroll/main',['jquery'], function($) {
     
 
-    var MIN_HEIGHT = 600;
-    var SLIDE_PARALLAX_CLASS = "slide-parallax";
+    var DEFAULT_MIN_HEIGHT = 500;
+    var SLIDE_PARALLAX_CLASS = ".fn-slide li.slideactive";
+    var SLIDE_DES_CLASS = ".herotestimonial-des";
+    var $window = $(window);
 
-	return {
-        'init': function(){
-		
-            var $window = $(window);
+    return {
+        'init': function() {
 
             // Attach window scroll event
             $window.scroll(function() {
-                    
-                var $activeSlide = $(".slide li.slideactive");
-                var scrollTop=$window.scrollTop();
+
+                var $activeSlide = $(SLIDE_PARALLAX_CLASS);
+                var $activeSlideFG = $activeSlide.find("> div");
+                var $activeSlideDes = $activeSlide.find(SLIDE_DES_CLASS);
+                var MIN_HEIGHT = $activeSlide.height() / 2 || DEFAULT_MIN_HEIGHT;
+                var scrollTop = $window.scrollTop();
                 if (scrollTop > MIN_HEIGHT) {
                     return;
                 }
 
-                $activeSlide.css("backgroundPositionY", scrollTop/5);
-                $activeSlide.find(">div").css("backgroundPositionY", scrollTop/1.5);
-
+                $activeSlide.css("backgroundPositionY", scrollTop / 4);
+                $activeSlideFG.css("backgroundPositionY", scrollTop / 1.5);
+                $activeSlideDes.css("top", scrollTop / 3);
 
             });
 
         }
     };
-	
+
 });
 /* Modernizr 2.6.1 (Custom Build) | MIT & BSD
  * Build: http://modernizr.com/download/#-fontface-backgroundsize-borderimage-borderradius-boxshadow-flexbox-hsla-multiplebgs-opacity-rgba-textshadow-cssanimations-csscolumns-generatedcontent-cssgradients-cssreflections-csstransforms-csstransforms3d-csstransitions-applicationcache-canvas-canvastext-draganddrop-hashchange-history-audio-video-indexeddb-input-inputtypes-localstorage-postmessage-sessionstorage-websockets-websqldatabase-webworkers-geolocation-inlinesvg-smil-svg-svgclippaths-touch-webgl-shiv-mq-cssclasses-addtest-prefixed-teststyles-testprop-testallprops-hasevent-prefixes-domprefixes-load
@@ -2766,16 +2775,16 @@ define("modernizr", function(){});
         , 'widget/slide/main'
         , 'widget/parallaxscroll/main'
         , 'modernizr']
-        , function(parentRequire, $, searchForm, language, account, slide, parallaxScroll) {
+        , function(parentRequire, $, searchForm, Language, Account, slide, parallaxScroll) {
         $(document).ready(function() {
-            // DOM elements count
-            console.log(document.getElementsByTagName("*").length);
+            // Initial language settings
+            var language = Language();
+            language.$el.appendTo($(".fn-lng-selector"))
+            // Account - login/signup
+            var account = Account();
+            account.$el.appendTo($(".fn-account"));
             // Search form
             searchForm.init(1);
-            // Initial language settings
-            language.init();
-            // Account - login/signup
-            account.init();
             // Slide show
             slide.init();
             // Parallax Scroll

@@ -627,7 +627,7 @@ header {
   position: fixed;
   z-index: 10;
   width: 100%;
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.9);
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
   background-image: linear-gradient(bottom, rgba(0, 0, 0, 0.07) 0%, rgba(255, 255, 255, 0.07) 100%);
   background-image: -o-linear-gradient(bottom, rgba(0, 0, 0, 0.07) 0%, rgba(255, 255, 255, 0.07) 100%);
@@ -783,11 +783,26 @@ nav ul > li > a {
 }
 /* + Append navigation */
 .navcontainer {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  visibility: hidden;
   overflow: hidden;
-  display: none;
-  padding: 2px 0;
+  padding: 0;
   width: 100%;
-  background-color: rgba(68, 75, 82, 0.85);
+  background-color: rgba(68, 75, 82, 0.9);
+  -webkit-transition: padding 0.1s ease-in, visibility 0 linear 0.1s;
+  -o-transition: padding 0.1s ease-in, visibility 0 linear 0.1s;
+  -moz-transition: padding 0.1s ease-in, visibility 0 linear 0.1s;
+  transition: padding 0.1s ease-in, visibility 0 linear 0.1s;
+}
+.navcontainer.active {
+  visibility: visible;
+  padding: 2px 0;
+  -webkit-transition: padding 0.1s ease-in;
+  -o-transition: padding 0.1s ease-in;
+  -moz-transition: padding 0.1s ease-in;
+  transition: padding 0.1s ease-in;
 }
 .navcontainer a.navcontainer-top {
   font-size: 95%;
@@ -896,10 +911,6 @@ nav ul > li > a {
   z-index: 0;
   opacity: 0;
   width: 100%;
-  -webkit-transition: all 0.4s ease-in;
-  -o-transition: all 0.4s ease-in;
-  -moz-transition: all 0.4s ease-in;
-  transition: all 0.4s ease-in;
 }
 .herotestimonial > ul > li.slideactive {
   position: relative;
@@ -917,10 +928,6 @@ nav ul > li > a {
 .herotestimonial > ul > li > div {
   opacity: 0;
   min-height: 756px;
-  -webkit-transition: all 0.4s ease-in;
-  -o-transition: all 0.4s ease-in;
-  -moz-transition: all 0.4s ease-in;
-  transition: all 0.4s ease-in;
 }
 .herotestimonial > ul > li > div .herotestimonial-des {
   display: none;
@@ -994,6 +1001,13 @@ nav ul > li > a {
 .searchbar {
   background-color: #252531;
   line-height: 70px;
+  -webkit-transition: opacity 0.4s ease-in;
+  -o-transition: opacity 0.4s ease-in;
+  -moz-transition: opacity 0.4s ease-in;
+  transition: opacity 0.4s ease-in;
+}
+.searchbar.inactive {
+  opacity: 0;
 }
 .searchbar > h2 {
   color: #fff;
@@ -1394,6 +1408,18 @@ ul.extlogin-links > li.extlogin-sina > a {
 }
 .herotestimonial > ul {
   min-height: 856px;
+}
+.herotestimonial > ul > li {
+  -webkit-transition: opacity 0.4s ease-in, background-position-x 0.4s ease-in;
+  -o-transition: opacity 0.4s ease-in, background-position-x 0.4s ease-in;
+  -moz-transition: opacity 0.4s ease-in, background-position-x 0.4s ease-in;
+  transition: opacity 0.4s ease-in, background-position-x 0.4s ease-in;
+}
+.herotestimonial > ul > li > div {
+  -webkit-transition: opacity 0.4s ease-in, background-position-x 0.4s ease-in;
+  -o-transition: opacity 0.4s ease-in, background-position-x 0.4s ease-in;
+  -moz-transition: opacity 0.4s ease-in, background-position-x 0.4s ease-in;
+  transition: opacity 0.4s ease-in, background-position-x 0.4s ease-in;
 }
 .herotestimonial > ul > li.slide-1 {
   background-image: url(../slide/bg_slide_r1.jpg);

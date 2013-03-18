@@ -1,17 +1,23 @@
 define(["jquery", "../signup/main",  "text!./index.html"], function($, signup, template) {
 
-	return {
-		'init': function() {
-			
-			var $template = $(template);
+	var w = function(){
+		var $template = $(template);
+
+		(function init(){
+			// Attach events
 			$template.on("click", "button", function(){
 				var $this = $(this);
-				console.log('popup signup box');
 				signup.init();
 			});
-			// Append to DOM
-			$(".fn-account").append($template);
+		})();
 
-		}
+		// Return object
+		var o = {};
+		o.$el = $template;
+
+		return o;
 	};
+
+	return w;
+
 });

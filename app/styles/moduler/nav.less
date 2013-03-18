@@ -36,11 +36,30 @@ nav
 /* + Append navigation */
 .navcontainer
 {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	visibility: hidden;
 	overflow: hidden;
-	display: none;
-	padding: 2px 0;
+	padding: 0;
 	width: 100%;
-	background-color: rgba(68, 75, 82, 0.85);
+	background-color: rgba(68, 75, 82, 0.9);
+
+    -webkit-transition: padding .1s ease-in, visibility 0 linear .1s;
+	-o-transition: padding .1s ease-in, visibility 0 linear .1s;
+	-moz-transition: padding .1s ease-in, visibility 0 linear .1s;
+	transition: padding .1s ease-in, visibility 0 linear .1s;
+
+	&.active
+	{
+		visibility: visible;
+		padding: 2px 0;
+
+	    -webkit-transition: padding .1s ease-in;
+		-o-transition: padding .1s ease-in;
+		-moz-transition: padding .1s ease-in;
+		transition: padding .1s ease-in;
+	}
 
 	a.navcontainer-top
 	{

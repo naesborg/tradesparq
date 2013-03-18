@@ -1,37 +1,39 @@
 define(['jquery', 'text!./index.html'], function($, template) {
 
-	// body...
+	var $window = $(window);
+	var HANG_NAV_ACTIVE_CLASS = "active";
+	var SEARCHBAR_INACTIVE_CLASS = "inactive";
+
 	return {
 		'init': function(page) {
 			page = page || 0;
 
-			var $window = $(window);
 			var flagAdsorbed;
 			var scrollTop = page === 0 ? $(".herotestimonial").outerHeight() - $("header").outerHeight() - $(".searchbar").outerHeight() - $(".mediavoice").outerHeight() : $(".herotestimonial").outerHeight() - $("header").outerHeight() - Math.abs(parseInt($(".herotestimonial").next("div").css('marginTop')));
 
 			var $header = $("header");
 			var $nav = $header.find("nav");
 			var $headerh1 = $header.find("h1");
-			var $navContainer = $header.find(".navcontainer");
-			var $navContainerInner = $navContainer.find(">div");
-			var $searchbar = $(".searchbar");
-			var $headerFormContainer = $header.find(".searchformcontainer");
-			var $searchbarFormContainer = $searchbar.find(".searchformcontainer");
+			var $navContainer = $header.find(".fn-navcontainer");
+			var $navContainerInner = $navContainer.find("> div");
+			var $searchbar = $(".fn-searchbar");
+			var $headerFormContainer = $header.find(".fn-searchformcontainer");
+			var $searchbarFormContainer = $searchbar.find(".fn-searchformcontainer");
 			var $searchForm = $(template);
 
 
 			function adsorbSearch() {
 				$navContainerInner.append($nav)
-				$navContainer.show();
-				$searchbar.css('visibility', 'hidden');
+				$navContainer.addClass(HANG_NAV_ACTIVE_CLASS);
+				$searchbar.addClass(SEARCHBAR_INACTIVE_CLASS);
 				$headerFormContainer.append($searchForm);
 			};
 
 			function disAdsorbSearch() {
-				$navContainer.hide();
-				$headerh1.after($nav);
-				$searchbar.css('visibility', 'visible');
 				$searchbarFormContainer.append($searchForm);
+				$searchbar.removeClass(SEARCHBAR_INACTIVE_CLASS);
+				$navContainer.removeClass(HANG_NAV_ACTIVE_CLASS);
+				$headerh1.after($nav);
 			};
 
 			// Append search form to search bar
@@ -42,7 +44,6 @@ define(['jquery', 'text!./index.html'], function($, template) {
 					if ($window.scrollTop() < scrollTop) {
 						return;
 					} else {
-						console.log('adsorb');
 						adsorbSearch();
 						flagAdsorbed = true;
 						return;
@@ -51,7 +52,6 @@ define(['jquery', 'text!./index.html'], function($, template) {
 					if ($window.scrollTop() > scrollTop) {
 						return;
 					} else {
-						console.log('disadsorb');
 						disAdsorbSearch();
 						flagAdsorbed = false;
 						return;
