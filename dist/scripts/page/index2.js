@@ -364,7 +364,7 @@ define('text',['module'], function (module) {
     }
     return text;
 });
-define('text!widget/searchform/index.html',[],function () { return '<form class="form-search">\n    <div class="input-append">\n        <input type="text" name="user_search" class="span2 search-query opensans" placeholder="Search for products, people &amp; company">\n        <button type="submit" class="">Search</button>\n    </div>\n</form>\n';});
+define('text!widget/searchform/index.html',[],function () { return '<form class="form-search">\r\n    <div class="input-append">\r\n        <input type="text" name="user_search" class="span2 search-query opensans" placeholder="Search for products, people &amp; company">\r\n        <button type="submit" class="">Search</button>\r\n    </div>\r\n</form>\r\n';});
 
 define('widget/searchform/main',['jquery', 'text!./index.html'], function($, template) {
 
@@ -539,7 +539,7 @@ define('widget/blurb/main',[],function(){
 		return "";
 	};
 });
-define('text!widget/language/index.html',[],function () { return '<div class="btn-group">\n    <a class="btn dropdown-toggle" data-toggle="dropdown" href="#"><span class="flag-en"></span>English<span class="caret"></span>\n    </a>\n    <ul class="dropdown-menu">\n        <li class="dropdown-arrow"><span class="caret"></span></li>\n        <li>\n            <a href=""><span data-lng="en" class="flag-en"></span>English</a>\n        </li>\n        <li>\n            <a href=""><span data-lng="cn" class="flag-cn"></span>Chinese</a>\n        </li>\n    </ul>\n</div>\n';});
+define('text!widget/language/index.html',[],function () { return '<div class="btn-group">\r\n    <a class="btn dropdown-toggle" data-toggle="dropdown" href="#"><span class="flag-en"></span>English<span class="caret"></span>\r\n    </a>\r\n    <ul class="dropdown-menu">\r\n        <li class="dropdown-arrow"><span class="caret"></span></li>\r\n        <li>\r\n            <a href=""><span data-lng="en" class="flag-en"></span>English</a>\r\n        </li>\r\n        <li>\r\n            <a href=""><span data-lng="cn" class="flag-cn"></span>Chinese</a>\r\n        </li>\r\n    </ul>\r\n</div>\r\n';});
 
 define('widget/language/main',["jquery", "jquery.cookie", "../blurb/main", "text!./index.html"], function($, cookie, blurbs, template) {
 
@@ -594,7 +594,7 @@ define('widget/language/main',["jquery", "jquery.cookie", "../blurb/main", "text
 });
 /*!
  * fancyBox - jQuery Plugin
- * version: 2.1.3 (Tue, 23 Oct 2012)
+ * version: 2.1.4 (Thu, 10 Jan 2013)
  * @requires jQuery v1.6 or later
  *
  * Examples at http://fancyapps.com/fancybox/
@@ -612,6 +612,7 @@ define('widget/language/main',["jquery", "jquery.cookie", "../blurb/main", "text
 		F = $.fancybox = function () {
 			F.open.apply( this, arguments );
 		},
+		IE =  navigator.userAgent.match(/msie/),
 		didUpdate = null,
 		isTouch	  = document.createTouch !== undefined,
 
@@ -642,7 +643,7 @@ define('widget/language/main',["jquery", "jquery.cookie", "../blurb/main", "text
 
 	$.extend(F, {
 		// The current version of fancyBox
-		version: '2.1.3',
+		version: '2.1.4',
 
 		defaults: {
 			padding : 15,
@@ -730,7 +731,7 @@ define('widget/language/main',["jquery", "jquery.cookie", "../blurb/main", "text
 			tpl: {
 				wrap     : '<div class="fancybox-wrap" tabIndex="-1"><div class="fancybox-skin"><div class="fancybox-outer"><div class="fancybox-inner"></div></div></div></div>',
 				image    : '<img class="fancybox-image" src="{href}" alt="" />',
-				iframe   : '<iframe id="fancybox-frame{rnd}" name="fancybox-frame{rnd}" class="fancybox-iframe" frameborder="0" vspace="0" hspace="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen' + ($.browser.msie ? ' allowtransparency="true"' : '') + '></iframe>',
+				iframe   : '<iframe id="fancybox-frame{rnd}" name="fancybox-frame{rnd}" class="fancybox-iframe" frameborder="0" vspace="0" hspace="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen' + (IE ? ' allowtransparency="true"' : '') + '></iframe>',
 				error    : '<p class="fancybox-error">The requested content cannot be loaded.<br/>Please try again later.</p>',
 				closeBtn : '<a title="Close" class="fancybox-item fancybox-close" href="javascript:;"></a>',
 				next     : '<a title="Next" class="fancybox-nav fancybox-next" href="javascript:;"><span></span></a>',
@@ -2036,7 +2037,7 @@ define('widget/language/main',["jquery", "jquery.cookie", "../blurb/main", "text
 
 			// Create a close button
 			if (current.closeBtn) {
-				$(current.tpl.closeBtn).appendTo(F.skin).bind( isTouch ? 'touchstart.fb' : 'click.fb', function(e) {
+				$(current.tpl.closeBtn).appendTo(F.skin).bind('click.fb', function(e) {
 					e.preventDefault();
 
 					F.close();
@@ -2250,10 +2251,7 @@ define('widget/language/main',["jquery", "jquery.cookie", "../blurb/main", "text
 				F.wrap.css(startPos).animate(endPos, {
 					duration : current.nextSpeed,
 					easing   : current.nextEasing,
-					complete : function() {
-						// This helps FireFox to properly render the box
-						setTimeout(F._afterZoomIn, 20);
-					}
+					complete : F._afterZoomIn
 				});
 			}
 		},
@@ -2374,7 +2372,7 @@ define('widget/language/main',["jquery", "jquery.cookie", "../blurb/main", "text
 			this.overlay.width(width).height('100%');
 
 			// jQuery does not return reliable result for IE
-			if ($.browser.msie) {
+			if (IE) {
 				offsetWidth = Math.max(document.documentElement.offsetWidth, document.body.offsetWidth);
 
 				if (D.width() > offsetWidth) {
@@ -2481,7 +2479,7 @@ define('widget/language/main',["jquery", "jquery.cookie", "../blurb/main", "text
 
 					title.appendTo('body');
 
-					if ($.browser.msie) {
+					if (IE) {
 						title.width( title.width() );
 					}
 
@@ -2579,15 +2577,15 @@ define('widget/language/main',["jquery", "jquery.cookie", "../blurb/main", "text
 }(window, document, jQuery));
 define("fancybox", function(){});
 
-define('text!widget/signup/index.html',[],function () { return '<div class="cf inlineblock signup">\n\t<h2>Sign up now for free!</h2>\n\t<div class="signupform col-l">\n\t\t<form class="form-horizontal">\n\t\t  <div class="control-group">\n\t\t    <div class="controls">\n\t\t      <input type="text" required id="inputName" placeholder="Name">\n\t\t    </div>\n\t\t  </div>\n\t\t  <div class="control-group">\n\t\t    <div class="controls">\n\t\t      <input type="email" name="email" required id="inputEmail" placeholder="Email">\n\t\t    </div>\n\t\t  </div>\n\t\t  <div class="control-group">\n\t\t    <div class="controls">\n\t\t      <input type="password" required id="inputPassword" placeholder="Password">\n\t\t    </div>\n\t\t  </div>\n\t\t  <div class="control-group">\n\t\t    <div class="controls">\n\t\t      <input type="password" required id="inputPasswordConfirm" placeholder="Confirm">\n\t\t    </div>\n\t\t  </div>\n\t\t  <div class="control-group">\n\t\t    <div class="controls cf">\n\t\t      <button type="submit" class="btn btn-primary btn-large">Join</button>\n\t\t      <label class="checkbox">\n\t\t        <input type="checkbox">I agree to the terms of use.\n\t\t      </label>\n\t\t    </div>\n\t\t  </div>\n\t\t</form>\n\t</div>\n\t<div class="servicelogin col-l">\n\t\t<p>Or...Login with you favorite service</p>\n        <ul class="col-r extlogin-links hor">\n            <li class="extlogin-facebook">\n                <a href="//www.facebook.com"></a>\n            </li>\n            <li class="extlogin-google">\n                <a href="//www.google.com"></a>\n            </li>\n            <li class="extlogin-yahoo">\n                <a href="//www.yahoo.com"></a>\n            </li>\n            <li class="extlogin-linkedin">\n                <a href="//www.linkedin.com"></a>\n            </li>\n            <li class="extlogin-tencent">\n                <a href="//www.tencent.com"></a>\n            </li>\n            <li class="extlogin-sina">\n                <a href="//www.sina.com"></a>\n            </li>\n        </ul>\n\t</div>\n</div>';});
+define('text!widget/signup/index.html',[],function () { return '<div class="cf inlineblock signup">\r\n\t<h2>Sign up now for free!</h2>\r\n\t<div class="signupform col-l">\r\n\t\t<form class="form-horizontal">\r\n\t\t  <div class="control-group">\r\n\t\t    <div class="controls">\r\n\t\t      <input type="text" required id="inputName" placeholder="Name">\r\n\t\t    </div>\r\n\t\t  </div>\r\n\t\t  <div class="control-group">\r\n\t\t    <div class="controls">\r\n\t\t      <input type="email" name="email" required id="inputEmail" placeholder="Email">\r\n\t\t    </div>\r\n\t\t  </div>\r\n\t\t  <div class="control-group">\r\n\t\t    <div class="controls">\r\n\t\t      <input type="password" required id="inputPassword" placeholder="Password">\r\n\t\t    </div>\r\n\t\t  </div>\r\n\t\t  <div class="control-group">\r\n\t\t    <div class="controls">\r\n\t\t      <input type="password" required id="inputPasswordConfirm" placeholder="Confirm">\r\n\t\t    </div>\r\n\t\t  </div>\r\n\t\t  <div class="control-group">\r\n\t\t    <div class="controls cf">\r\n\t\t      <button type="submit" class="btn btn-primary btn-large">Join</button>\r\n\t\t      <label class="checkbox">\r\n\t\t        <input type="checkbox">I agree to the terms of use.\r\n\t\t      </label>\r\n\t\t    </div>\r\n\t\t  </div>\r\n\t\t</form>\r\n\t</div>\r\n\t<div class="servicelogin col-l">\r\n\t\t<p>Or...Login with you favorite service</p>\r\n        <ul class="col-r extlogin-links hor">\r\n            <li class="extlogin-facebook">\r\n                <a href="//www.facebook.com"></a>\r\n            </li>\r\n            <li class="extlogin-google">\r\n                <a href="//www.google.com"></a>\r\n            </li>\r\n            <li class="extlogin-yahoo">\r\n                <a href="//www.yahoo.com"></a>\r\n            </li>\r\n            <li class="extlogin-linkedin">\r\n                <a href="//www.linkedin.com"></a>\r\n            </li>\r\n            <li class="extlogin-tencent">\r\n                <a href="//www.tencent.com"></a>\r\n            </li>\r\n            <li class="extlogin-sina">\r\n                <a href="//www.sina.com"></a>\r\n            </li>\r\n        </ul>\r\n\t</div>\r\n</div>';});
 
 define('widget/signup/main',["jquery", "fancybox", "text!./index.html"], function($, fancybox, template) {
 
 	return {
 		'init': function() {
-			
+
 			var $template = $(template);
-			$template.on("click", "button.submit", function(){
+			$template.on("click", "button.submit", function() {
 				var $this = $(this);
 				// TODO: submit form
 				// ...
@@ -2595,20 +2593,26 @@ define('widget/signup/main',["jquery", "fancybox", "text!./index.html"], functio
 			// Append to DOM
 			//$("body").append($template);
 
-			$.fancybox($template,{
-				'transitionIn'	:	'elastic',
-				'transitionOut'	:	'elastic',
-				'speedIn'		:	600, 
-				'speedOut'		:	200,
-				'padding'		: 	30,
-				'scrolling'		: 	'no',
-				'overlayShow'	:	true
+			$.fancybox($template, {
+				'transitionIn': 'elastic',
+				'transitionOut': 'elastic',
+				'speedIn': 600,
+				'speedOut': 200,
+				'padding': 30,
+				'scrolling': 'no',
+				'overlayShow': false,
+				"overlayOpacity": 0,
+				"beforeShow": function(){
+					$(".fancybox-overlay")
+					.css("backgroundImage","none")
+					.css("backgroundColor","transparent");
+				}
 			});
 
 		}
 	};
 });
-define('text!widget/account/index.html',[],function () { return '<a href="#" class="bold mr-15">Login</a>\n<div class="btn-group">\n    <button class="btn btn-primary opensans txt-xxl bold">Join now</button>\n    <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">\n        <span class="caret"></span>\n    </button>\n    <ul class="dropdown-menu">\n    <!-- dropdown menu links -->\n    </ul>\n</div>\n';});
+define('text!widget/account/index.html',[],function () { return '<a href="#" class="bold mr-15">Login</a>\r\n<div class="btn-group">\r\n    <button class="btn btn-primary opensans txt-xxl bold">Join now</button>\r\n    <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">\r\n        <span class="caret"></span>\r\n    </button>\r\n    <ul class="dropdown-menu">\r\n    <!-- dropdown menu links -->\r\n    </ul>\r\n</div>\r\n';});
 
 define('widget/account/main',["jquery", "../signup/main",  "text!./index.html"], function($, signup, template) {
 
@@ -2750,7 +2754,7 @@ define("modernizr", function(){});
             "jquery-ui": '../vendor/jquery-ui/1.10.0/jquery-ui',
             "jquery.cookie": "../vendor/jquery.cookie/1.3.1/jquery.cookie",
             "modernizr": "../vendor/modernizr/2.6.1/modernizr.min",
-            "fancybox": "../vendor/fancybox/2.1.3/jquery.fancybox",
+            "fancybox": "../vendor/fancybox/2.1.4/jquery.fancybox",
             "text": "../vendor/text/2.0.5+/text",
             "widget": "../widget/"
         },

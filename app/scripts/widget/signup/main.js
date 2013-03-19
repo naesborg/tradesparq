@@ -2,9 +2,9 @@ define(["jquery", "fancybox", "text!./index.html"], function($, fancybox, templa
 
 	return {
 		'init': function() {
-			
+
 			var $template = $(template);
-			$template.on("click", "button.submit", function(){
+			$template.on("click", "button.submit", function() {
 				var $this = $(this);
 				// TODO: submit form
 				// ...
@@ -12,14 +12,20 @@ define(["jquery", "fancybox", "text!./index.html"], function($, fancybox, templa
 			// Append to DOM
 			//$("body").append($template);
 
-			$.fancybox($template,{
-				'transitionIn'	:	'elastic',
-				'transitionOut'	:	'elastic',
-				'speedIn'		:	600, 
-				'speedOut'		:	200,
-				'padding'		: 	30,
-				'scrolling'		: 	'no',
-				'overlayShow'	:	true
+			$.fancybox($template, {
+				'transitionIn': 'elastic',
+				'transitionOut': 'elastic',
+				'speedIn': 600,
+				'speedOut': 200,
+				'padding': 30,
+				'scrolling': 'no',
+				'overlayShow': false,
+				"overlayOpacity": 0,
+				"beforeShow": function(){
+					$(".fancybox-overlay")
+					.css("backgroundImage","none")
+					.css("backgroundColor","transparent");
+				}
 			});
 
 		}

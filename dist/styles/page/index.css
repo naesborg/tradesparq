@@ -1,4 +1,4 @@
-@import url(../../scripts/vendor/fancybox/2.1.3/jquery.fancybox.css);
+@import url(../../scripts/vendor/fancybox/2.1.4/jquery.fancybox.css);
 
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600);
 /* Open Sans */
@@ -616,6 +616,10 @@ a:hover {
 }
 li {
   list-style: none;
+}
+body > div {
+  max-width: 1532px;
+  margin: 0 auto;
 }
 .page-width {
   width: 1024px;
