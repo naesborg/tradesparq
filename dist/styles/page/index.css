@@ -652,7 +652,7 @@ header h1 {
 header h1 a {
   display: inline-block;
   line-height: 0;
-  padding: 8px 0 14px;
+  padding: 7px 0 13px;
 }
 header .searchformcontainer {
   margin: 14px 0 0 -30px;
@@ -784,6 +784,10 @@ nav ul > li > a {
   line-height: 2em;
   display: block;
   padding: 0 18px;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
 }
 /* + Append navigation */
 .navcontainer {
@@ -844,6 +848,10 @@ nav ul > li > a {
   font-size: 95%;
   font-weight: lighter;
   color: #fff;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
 }
 /* + Account: Sign up/in */
 .account > a {
@@ -851,23 +859,13 @@ nav ul > li > a {
   line-height: 56px;
   font-size: 15px;
 }
-.account .btn-group {
+.account > .btn {
   margin-top: -4px;
   opacity: .8;
+  padding: 8px 20px 9px;
 }
-.account .btn-group > .btn {
-  padding-top: 8px;
-  padding-bottom: 9px;
-}
-.account .btn-group > .btn.txt-xxl {
+.account > .btn.txt-xxl {
   font-size: 15px;
-}
-.account .btn-group > .btn + .dropdown-toggle {
-  padding-left: 12px;
-  padding-right: 12px;
-}
-.account .btn-group > .btn + .dropdown-toggle .caret {
-  border-width: 5px;
 }
 .form-search {
   line-height: 0;
@@ -1052,45 +1050,51 @@ nav ul > li > a {
 }
 /* + Customs data */
 .freecustoms {
+  overflow: hidden;
+}
+.freecustoms .freecustoms-fixed {
+  position: relative;
+  top: 0;
+  left: 0;
   background-color: #444b52;
-  padding: 40px 0 80px 0;
+  overflow: hidden;
+}
+.freecustoms .freecustoms-fixed .freecustoms-content {
   color: #fff;
-}
-.freecustoms > div {
   padding-left: 10px;
+  margin: 40px 0 80px 0;
 }
-.freecustoms .txtguide {
+.freecustoms .freecustoms-fixed .freecustoms-content .txtguide {
   font-size: 19px;
   margin: 0;
 }
-.freecustoms .txtguide strong {
+.freecustoms .freecustoms-fixed .freecustoms-content .txtguide strong {
   font-size: 115%;
 }
-.freecustoms .txtguide img {
+.freecustoms .freecustoms-fixed .freecustoms-content .txtguide img {
   vertical-align: text-bottom;
   position: relative;
   top: 1px;
 }
-.freecustoms h2 {
+.freecustoms .freecustoms-fixed .freecustoms-content h2 {
   margin: 0 0 5px;
   line-height: 1.1em;
   font-size: 60px;
   font-weight: bolder;
 }
-.freecustoms .txtdes {
+.freecustoms .freecustoms-fixed .freecustoms-content .txtdes {
   font-size: 20px;
   line-height: 1.3em;
 }
-.freecustoms .btn-group .btn-large {
-  padding-top: 9px;
-  padding-bottom: 9px;
+.freecustoms .freecustoms-fixed .freecustoms-content .btn-warning.btn-large {
+  padding: 9px 20px;
   color: #000;
   font-size: 14px;
 }
-.freecustoms .btn-group .dropdown-toggle .caret {
+.freecustoms .freecustoms-fixed .freecustoms-content .btn-group .dropdown-toggle .caret {
   border-top-color: #000;
 }
-.freecustoms .freecustoms-search {
+.freecustoms .freecustoms-fixed .freecustoms-content .freecustoms-search {
   border: 1px solid #ffba00;
   border-radius: 5px;
   box-shadow: 0 2px 0 rgba(84, 73, 11, 0.16), 0 1px 0 rgba(255, 255, 255, 0.38) inset;
@@ -1101,21 +1105,21 @@ nav ul > li > a {
   background-image: -ms-linear-gradient(bottom, #ffb400 0%, #ffc000 100%);
   line-height: 38px;
 }
-.freecustoms .freecustoms-search > span {
+.freecustoms .freecustoms-fixed .freecustoms-content .freecustoms-search > span {
   color: #000;
   font-size: 14px;
 }
-.freecustoms .freecustoms-search > .caret {
+.freecustoms .freecustoms-fixed .freecustoms-content .freecustoms-search > .caret {
   margin: 15px 0 0 5px;
   border-width: 5px;
   border-style: solid;
   border-color: transparent;
   border-left-color: #000;
 }
-.freecustoms .freecustoms-search .form-search {
+.freecustoms .freecustoms-fixed .freecustoms-content .freecustoms-search .form-search {
   margin: 4px 10px 0 20px;
 }
-.freecustoms .freecustoms-search .form-search .input-append .search-query {
+.freecustoms .freecustoms-fixed .freecustoms-content .freecustoms-search .form-search .input-append .search-query {
   width: 350px;
   border-color: rgba(49, 53, 59, 0.56);
 }
@@ -1199,39 +1203,40 @@ nav ul > li > a {
   margin: 0 10px 0 0;
   line-height: 2.5em;
 }
-.signup > h2 {
+.enrollment > h2 {
   margin: 0 0 30px;
   font-size: 17px;
 }
-.signup > div.signupform > form {
+.enrollment > div.enrollmentform > form {
   width: 360px;
+  min-height: 180px;
   margin: 0;
 }
-.signup > div.signupform > form.form-horizontal .controls {
+.enrollment > div.enrollmentform > form.form-horizontal .controls {
   margin-left: 15px;
 }
-.signup > div.signupform > form.form-horizontal .controls > input {
+.enrollment > div.enrollmentform > form.form-horizontal .controls > input {
   width: 85%;
 }
-.signup > div.signupform > form.form-horizontal .controls > button {
+.enrollment > div.enrollmentform > form.form-horizontal .controls > button {
   float: left;
   opacity: .8;
 }
-.signup > div.signupform > form.form-horizontal .controls > label {
+.enrollment > div.enrollmentform > form.form-horizontal .controls > label {
   float: left;
   margin: 10px 0 0 30px;
   white-space: nowrap;
 }
-.signup > div.servicelogin {
+.enrollment > div.servicelogin {
   width: 320px;
   padding: 15px 0 30px 36px;
   border-left: 1px solid #ccc;
 }
-.signup > div.servicelogin > p {
+.enrollment > div.servicelogin > p {
   font-size: 17px;
   font-weight: bold;
 }
-.signup > div.servicelogin ul.extlogin-links > li {
+.enrollment > div.servicelogin ul.extlogin-links > li {
   margin-top: 15px;
 }
 ul.extlogin-links {

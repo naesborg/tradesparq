@@ -28,20 +28,22 @@
         , 'jquery'
         , 'widget/searchform/main'
         , 'widget/language/main'
-        , 'widget/account/main'
+        , 'widget/login/main'
+        , 'widget/signup/main'
         , 'widget/slide/main'
         , 'widget/parallaxscroll/main'
         , 'modernizr']
-        , function(parentRequire, $, searchForm, Language, Account, parallaxScroll, slide) {
+        , function(parentRequire, $, searchForm, Language, login, signup, parallaxScroll, slide) {
         $(document).ready(function() {
             // Initial language settings
             var language = Language();
-            language.$el.appendTo($(".fn-lng-selector"))
-            // Account - login/signup
-            var account = Account();
-            account.$el.appendTo($(".fn-account"));
+            language.$el.appendTo($(".fn-lng-selector"));
+            // Login
+            login.init();
+            // Signup
+            signup.init();
             // Search form
-            searchForm.init(0);
+            searchForm.init();
             // Slide show
             slide.init();
             // Parallax Scroll

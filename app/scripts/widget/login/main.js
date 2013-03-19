@@ -10,7 +10,7 @@ define(["jquery", "fancybox", "text!./index.html"], function($, fancybox, templa
 				// ...
 			});
 			// Append to DOM
-			function showSignupBox(){
+			function showLoginBox(){
 				$.fancybox($template, {
 					'transitionIn': 'elastic',
 					'transitionOut': 'elastic',
@@ -33,8 +33,8 @@ define(["jquery", "fancybox", "text!./index.html"], function($, fancybox, templa
 				});
 			};
 
-			// Attach events for all elements with class "fn-join"
-			$("body").on("click", ".fn-join", showSignupBox);
+			// Attach events for all elements with class "fn-login"
+			$("body").on("click", ".fn-login", showLoginBox);
 
 		}
 	};

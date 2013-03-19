@@ -364,7 +364,7 @@ define('text',['module'], function (module) {
     }
     return text;
 });
-define('text!widget/searchform/index.html',[],function () { return '<form class="form-search">\r\n    <div class="input-append">\r\n        <input type="text" name="user_search" class="span2 search-query opensans" placeholder="Search for products, people &amp; company">\r\n        <button type="submit" class="">Search</button>\r\n    </div>\r\n</form>\r\n';});
+define('text!widget/searchform/index.html',[],function () { return '<form class="form-search">\n    <div class="input-append">\n        <input type="text" name="user_search" class="span2 search-query opensans" placeholder="Search for products, people &amp; company">\n        <button type="submit" class="">Search</button>\n    </div>\n</form>\n';});
 
 define('widget/searchform/main',['jquery', 'text!./index.html'], function($, template) {
 
@@ -406,8 +406,7 @@ define('widget/searchform/main',['jquery', 'text!./index.html'], function($, tem
 
 			// Append search form to search bar
 			$searchbarFormContainer.append($searchForm);
-			// Attach window scroll event
-			$window.scroll(function() {
+			var detect = function (){
 				if (!flagAdsorbed) {
 					if ($window.scrollTop() < scrollTop) {
 						return;
@@ -425,7 +424,11 @@ define('widget/searchform/main',['jquery', 'text!./index.html'], function($, tem
 						return;
 					}
 				}
-			});
+			};
+			// Self start detect
+			detect();
+			// Attach window scroll event
+			$window.scroll(detect);
 		}
 
 	};
@@ -539,7 +542,7 @@ define('widget/blurb/main',[],function(){
 		return "";
 	};
 });
-define('text!widget/language/index.html',[],function () { return '<div class="btn-group">\r\n    <a class="btn dropdown-toggle" data-toggle="dropdown" href="#"><span class="flag-en"></span>English<span class="caret"></span>\r\n    </a>\r\n    <ul class="dropdown-menu">\r\n        <li class="dropdown-arrow"><span class="caret"></span></li>\r\n        <li>\r\n            <a href=""><span data-lng="en" class="flag-en"></span>English</a>\r\n        </li>\r\n        <li>\r\n            <a href=""><span data-lng="cn" class="flag-cn"></span>Chinese</a>\r\n        </li>\r\n    </ul>\r\n</div>\r\n';});
+define('text!widget/language/index.html',[],function () { return '<div class="btn-group">\n    <a class="btn dropdown-toggle" data-toggle="dropdown" href="#"><span class="flag-en"></span>English<span class="caret"></span>\n    </a>\n    <ul class="dropdown-menu">\n        <li class="dropdown-arrow"><span class="caret"></span></li>\n        <li>\n            <a href=""><span data-lng="en" class="flag-en"></span>English</a>\n        </li>\n        <li>\n            <a href=""><span data-lng="cn" class="flag-cn"></span>Chinese</a>\n        </li>\n    </ul>\n</div>\n';});
 
 define('widget/language/main',["jquery", "jquery.cookie", "../blurb/main", "text!./index.html"], function($, cookie, blurbs, template) {
 
@@ -2577,7 +2580,50 @@ define('widget/language/main',["jquery", "jquery.cookie", "../blurb/main", "text
 }(window, document, jQuery));
 define("fancybox", function(){});
 
-define('text!widget/signup/index.html',[],function () { return '<div class="cf inlineblock signup">\r\n\t<h2>Sign up now for free!</h2>\r\n\t<div class="signupform col-l">\r\n\t\t<form class="form-horizontal">\r\n\t\t  <div class="control-group">\r\n\t\t    <div class="controls">\r\n\t\t      <input type="text" required id="inputName" placeholder="Name">\r\n\t\t    </div>\r\n\t\t  </div>\r\n\t\t  <div class="control-group">\r\n\t\t    <div class="controls">\r\n\t\t      <input type="email" name="email" required id="inputEmail" placeholder="Email">\r\n\t\t    </div>\r\n\t\t  </div>\r\n\t\t  <div class="control-group">\r\n\t\t    <div class="controls">\r\n\t\t      <input type="password" required id="inputPassword" placeholder="Password">\r\n\t\t    </div>\r\n\t\t  </div>\r\n\t\t  <div class="control-group">\r\n\t\t    <div class="controls">\r\n\t\t      <input type="password" required id="inputPasswordConfirm" placeholder="Confirm">\r\n\t\t    </div>\r\n\t\t  </div>\r\n\t\t  <div class="control-group">\r\n\t\t    <div class="controls cf">\r\n\t\t      <button type="submit" class="btn btn-primary btn-large">Join</button>\r\n\t\t      <label class="checkbox">\r\n\t\t        <input type="checkbox">I agree to the terms of use.\r\n\t\t      </label>\r\n\t\t    </div>\r\n\t\t  </div>\r\n\t\t</form>\r\n\t</div>\r\n\t<div class="servicelogin col-l">\r\n\t\t<p>Or...Login with you favorite service</p>\r\n        <ul class="col-r extlogin-links hor">\r\n            <li class="extlogin-facebook">\r\n                <a href="//www.facebook.com"></a>\r\n            </li>\r\n            <li class="extlogin-google">\r\n                <a href="//www.google.com"></a>\r\n            </li>\r\n            <li class="extlogin-yahoo">\r\n                <a href="//www.yahoo.com"></a>\r\n            </li>\r\n            <li class="extlogin-linkedin">\r\n                <a href="//www.linkedin.com"></a>\r\n            </li>\r\n            <li class="extlogin-tencent">\r\n                <a href="//www.tencent.com"></a>\r\n            </li>\r\n            <li class="extlogin-sina">\r\n                <a href="//www.sina.com"></a>\r\n            </li>\r\n        </ul>\r\n\t</div>\r\n</div>';});
+define('text!widget/login/index.html',[],function () { return '<div class="cf inlineblock enrollment">\n\t<h2>Sign up now for free!</h2>\n\t<div class="enrollmentform col-l">\n\t\t<form class="form-horizontal">\n\t\t  <div class="control-group mt-15">\n\t\t    <div class="controls">\n\t\t      <input type="email" name="email" required id="inputEmail" placeholder="Email">\n\t\t    </div>\n\t\t  </div>\n\t\t  <div class="control-group">\n\t\t    <div class="controls">\n\t\t      <input type="password" required id="inputPassword" placeholder="Password">\n\t\t    </div>\n\t\t  </div>\n\t\t  <div class="control-group">\n\t\t    <div class="controls cf">\n\t\t      <button type="submit" class="btn btn-primary btn-large">Join</button>\n\t\t      <label class="checkbox">\n\t\t        <input type="checkbox">Remember my password.\n\t\t      </label>\n\t\t    </div>\n\t\t  </div>\n\t\t</form>\n\t</div>\n\t<div class="servicelogin col-l">\n\t\t<p>Or...Login with you favorite service</p>\n        <ul class="col-r extlogin-links hor">\n            <li class="extlogin-facebook">\n                <a href="//www.facebook.com"></a>\n            </li>\n            <li class="extlogin-google">\n                <a href="//www.google.com"></a>\n            </li>\n            <li class="extlogin-yahoo">\n                <a href="//www.yahoo.com"></a>\n            </li>\n            <li class="extlogin-linkedin">\n                <a href="//www.linkedin.com"></a>\n            </li>\n            <li class="extlogin-tencent">\n                <a href="//www.tencent.com"></a>\n            </li>\n            <li class="extlogin-sina">\n                <a href="//www.sina.com"></a>\n            </li>\n        </ul>\n\t</div>\n</div>';});
+
+define('widget/login/main',["jquery", "fancybox", "text!./index.html"], function($, fancybox, template) {
+
+	return {
+		'init': function() {
+
+			var $template = $(template);
+			$template.on("click", "button.submit", function() {
+				var $this = $(this);
+				// TODO: submit form
+				// ...
+			});
+			// Append to DOM
+			function showLoginBox(){
+				$.fancybox($template, {
+					'transitionIn': 'elastic',
+					'transitionOut': 'elastic',
+					'speedIn': 600,
+					'speedOut': 200,
+					'padding': 30,
+					'scrolling': 'no',
+					'overlayShow': false,
+					"overlayOpacity": 0,
+					"beforeShow": function(){
+						$(".fancybox-overlay")
+						.css("backgroundImage","none")
+						.css("backgroundColor","transparent");
+					},
+					"afterShow": function(){
+						$(".fancybox-close")
+						.css("top", -10)
+						.css("right", -10);
+					}
+				});
+			};
+
+			// Attach events for all elements with class "fn-login"
+			$("body").on("click", ".fn-login", showLoginBox);
+
+		}
+	};
+});
+define('text!widget/signup/index.html',[],function () { return '<div class="cf inlineblock enrollment">\n\t<h2>Sign up now for free!</h2>\n\t<div class="enrollmentform col-l">\n\t\t<form class="form-horizontal">\n\t\t  <div class="control-group">\n\t\t    <div class="controls">\n\t\t      <input type="text" required id="inputName" placeholder="Name">\n\t\t    </div>\n\t\t  </div>\n\t\t  <div class="control-group">\n\t\t    <div class="controls">\n\t\t      <input type="email" name="email" required id="inputEmail" placeholder="Email">\n\t\t    </div>\n\t\t  </div>\n\t\t  <div class="control-group">\n\t\t    <div class="controls">\n\t\t      <input type="password" required id="inputPassword" placeholder="Password">\n\t\t    </div>\n\t\t  </div>\n\t\t  <div class="control-group">\n\t\t    <div class="controls">\n\t\t      <input type="password" required id="inputPasswordConfirm" placeholder="Confirm">\n\t\t    </div>\n\t\t  </div>\n\t\t  <div class="control-group">\n\t\t    <div class="controls cf">\n\t\t      <button type="submit" class="btn btn-primary btn-large">Join</button>\n\t\t      <label class="checkbox">\n\t\t        <input type="checkbox">I agree to the terms of use.\n\t\t      </label>\n\t\t    </div>\n\t\t  </div>\n\t\t</form>\n\t</div>\n\t<div class="servicelogin col-l">\n\t\t<p>Or...Login with you favorite service</p>\n        <ul class="col-r extlogin-links hor">\n            <li class="extlogin-facebook">\n                <a href="//www.facebook.com"></a>\n            </li>\n            <li class="extlogin-google">\n                <a href="//www.google.com"></a>\n            </li>\n            <li class="extlogin-yahoo">\n                <a href="//www.yahoo.com"></a>\n            </li>\n            <li class="extlogin-linkedin">\n                <a href="//www.linkedin.com"></a>\n            </li>\n            <li class="extlogin-tencent">\n                <a href="//www.tencent.com"></a>\n            </li>\n            <li class="extlogin-sina">\n                <a href="//www.sina.com"></a>\n            </li>\n        </ul>\n\t</div>\n</div>';});
 
 define('widget/signup/main',["jquery", "fancybox", "text!./index.html"], function($, fancybox, template) {
 
@@ -2591,51 +2637,34 @@ define('widget/signup/main',["jquery", "fancybox", "text!./index.html"], functio
 				// ...
 			});
 			// Append to DOM
-			//$("body").append($template);
+			function showSignupBox(){
+				$.fancybox($template, {
+					'transitionIn': 'elastic',
+					'transitionOut': 'elastic',
+					'speedIn': 600,
+					'speedOut': 200,
+					'padding': 30,
+					'scrolling': 'no',
+					'overlayShow': false,
+					"overlayOpacity": 0,
+					"beforeShow": function(){
+						$(".fancybox-overlay")
+						.css("backgroundImage","none")
+						.css("backgroundColor","transparent");
+					},
+					"afterShow": function(){
+						$(".fancybox-close")
+						.css("top", -10)
+						.css("right", -10);
+					}
+				});
+			};
 
-			$.fancybox($template, {
-				'transitionIn': 'elastic',
-				'transitionOut': 'elastic',
-				'speedIn': 600,
-				'speedOut': 200,
-				'padding': 30,
-				'scrolling': 'no',
-				'overlayShow': false,
-				"overlayOpacity": 0,
-				"beforeShow": function(){
-					$(".fancybox-overlay")
-					.css("backgroundImage","none")
-					.css("backgroundColor","transparent");
-				}
-			});
+			// Attach events for all elements with class "fn-join"
+			$("body").on("click", ".fn-join", showSignupBox);
 
 		}
 	};
-});
-define('text!widget/account/index.html',[],function () { return '<a href="#" class="bold mr-15">Login</a>\r\n<div class="btn-group">\r\n    <button class="btn btn-primary opensans txt-xxl bold">Join now</button>\r\n    <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">\r\n        <span class="caret"></span>\r\n    </button>\r\n    <ul class="dropdown-menu">\r\n    <!-- dropdown menu links -->\r\n    </ul>\r\n</div>\r\n';});
-
-define('widget/account/main',["jquery", "../signup/main",  "text!./index.html"], function($, signup, template) {
-
-	var w = function(){
-		var $template = $(template);
-
-		(function init(){
-			// Attach events
-			$template.on("click", "button", function(){
-				var $this = $(this);
-				signup.init();
-			});
-		})();
-
-		// Return object
-		var o = {};
-		o.$el = $template;
-
-		return o;
-	};
-
-	return w;
-
 });
 define('widget/slide/main',['jquery'], function() {
 
@@ -2709,6 +2738,8 @@ define('widget/parallaxscroll/main',['jquery'], function($) {
     
 
     var DEFAULT_MIN_HEIGHT = 500;
+    var DEFAULT_FREECUSTOMS_TOP = 84;
+    var SLIDE_CLASS = ".fn-slide";
     var SLIDE_PARALLAX_CLASS = ".fn-slide li.slideactive";
     var SLIDE_DES_CLASS = ".herotestimonial-des";
     var $window = $(window);
@@ -2716,21 +2747,38 @@ define('widget/parallaxscroll/main',['jquery'], function($) {
     return {
         'init': function() {
 
+            var $freecustoms = $(".fn-freecustoms");
+            var $freecustomsFixed = $(".fn-freecustoms-fixed");
+            var heightFreeCustoms = $freecustoms.height();
+            DEFAULT_FREECUSTOMS_TOP = $("header").height() + $(".navcontainer").height() + 4 || DEFAULT_FREECUSTOMS_TOP;
+            var absFreeCustomsTopTemp = DEFAULT_FREECUSTOMS_TOP + heightFreeCustoms;
+            $freecustomsFixed.css("top", ($freecustoms.get(0).getBoundingClientRect().top-DEFAULT_FREECUSTOMS_TOP) * -1);
+
             // Attach window scroll event
             $window.scroll(function() {
+                // Slide parallax
+                (function(){
+                    var $activeSlide = $(SLIDE_PARALLAX_CLASS);
+                    var $activeSlideFG = $activeSlide.find("> div");
+                    var $activeSlideDes = $activeSlide.find(SLIDE_DES_CLASS);
+                    var $slideButton = $(SLIDE_CLASS).find("a");
+                    var MIN_HEIGHT = $activeSlide.height() || DEFAULT_MIN_HEIGHT;
+                    var scrollTop = $window.scrollTop();
+                    if (scrollTop > MIN_HEIGHT) {
+                        return;
+                    }
 
-                var $activeSlide = $(SLIDE_PARALLAX_CLASS);
-                var $activeSlideFG = $activeSlide.find("> div");
-                var $activeSlideDes = $activeSlide.find(SLIDE_DES_CLASS);
-                var MIN_HEIGHT = $activeSlide.height() / 2 || DEFAULT_MIN_HEIGHT;
-                var scrollTop = $window.scrollTop();
-                if (scrollTop > MIN_HEIGHT) {
-                    return;
+                    $activeSlide.css("backgroundPositionY", scrollTop);
+                    $activeSlideFG.css("backgroundPositionY", scrollTop / 1.5);
+                    $activeSlideDes.css("top", scrollTop / 3);
+                    $slideButton.css("marginTop", scrollTop/1.8);
+                })();
+
+                // Free customs parallax
+                var absFreeCustomsTop = $freecustoms.get(0).getBoundingClientRect().top;
+                if((absFreeCustomsTop - heightFreeCustoms) <= DEFAULT_FREECUSTOMS_TOP){
+                    $freecustomsFixed.css("top", (heightFreeCustoms-(absFreeCustomsTopTemp-absFreeCustomsTop)) * -1);
                 }
-
-                $activeSlide.css("backgroundPositionY", scrollTop / 4);
-                $activeSlideFG.css("backgroundPositionY", scrollTop / 1.5);
-                $activeSlideDes.css("top", scrollTop / 3);
 
             });
 
@@ -2775,20 +2823,22 @@ define("modernizr", function(){});
         , 'jquery'
         , 'widget/searchform/main'
         , 'widget/language/main'
-        , 'widget/account/main'
+        , 'widget/login/main'
+        , 'widget/signup/main'
         , 'widget/slide/main'
         , 'widget/parallaxscroll/main'
         , 'modernizr']
-        , function(parentRequire, $, searchForm, Language, Account, parallaxScroll, slide) {
+        , function(parentRequire, $, searchForm, Language, login, signup, parallaxScroll, slide) {
         $(document).ready(function() {
             // Initial language settings
             var language = Language();
-            language.$el.appendTo($(".fn-lng-selector"))
-            // Account - login/signup
-            var account = Account();
-            account.$el.appendTo($(".fn-account"));
+            language.$el.appendTo($(".fn-lng-selector"));
+            // Login
+            login.init();
+            // Signup
+            signup.init();
             // Search form
-            searchForm.init(0);
+            searchForm.init();
             // Slide show
             slide.init();
             // Parallax Scroll

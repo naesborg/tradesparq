@@ -38,8 +38,7 @@ define(['jquery', 'text!./index.html'], function($, template) {
 
 			// Append search form to search bar
 			$searchbarFormContainer.append($searchForm);
-			// Attach window scroll event
-			$window.scroll(function() {
+			var detect = function (){
 				if (!flagAdsorbed) {
 					if ($window.scrollTop() < scrollTop) {
 						return;
@@ -57,7 +56,11 @@ define(['jquery', 'text!./index.html'], function($, template) {
 						return;
 					}
 				}
-			});
+			};
+			// Self start detect
+			detect();
+			// Attach window scroll event
+			$window.scroll(detect);
 		}
 
 	};

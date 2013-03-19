@@ -15,7 +15,7 @@
 @import "../moduler/cedric.less";
 @import "../moduler/contentindexing.less";
 @import "../moduler/extlogin.less";
-@import "../moduler/signup.less";
+@import "../moduler/enrollment.less";
 
 @import "../moduler/categorization.less";
 @import "../moduler/howitworks.less";
@@ -27,7 +27,15 @@
 }
 .freecustoms
 {
-	background: url(../images/bg_freecustomsdata.jpg) center top no-repeat;
+	.freecustoms-fixed
+	{
+		background: url(../images/bg_freecustomsdata.jpg) center center no-repeat;
+
+		.freecustoms-content
+		{
+			margin-top: 350px;
+		}
+	}
 }
 .herotestimonial
 {
