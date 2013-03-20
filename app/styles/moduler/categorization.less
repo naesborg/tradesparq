@@ -12,6 +12,12 @@
 			width: 33.3%;
 			text-align: center;
 			color: #525262;
+			background: url(../images/shadow_categorization_li.png) right 255px no-repeat;
+
+			&:last-child
+			{
+				background: none;
+			}
 
 			&.categorization-suppliers > .categorization-pic
 			{
@@ -65,5 +71,25 @@
 				}
 			}
 		}
+	}
+	.categorization-shadow-l,
+	.categorization-shadow-r
+	{
+		width: 67px;
+		height: 255px;
+		position: absolute;
+		top: 0;
+		background-repeat: no-repeat;
+		background-position: top left;
+	}
+	.categorization-shadow-l
+	{
+		left: -67px;
+		background-image: url(../images/shadow_categorization_l.png);
+	}
+	.categorization-shadow-r
+	{
+		right: -67px;
+		background-image: url(../images/shadow_categorization_r.png);
 	}
 }

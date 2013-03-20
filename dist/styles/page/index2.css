@@ -776,7 +776,6 @@ nav ul > li.active > a,
 nav ul > li > a:hover {
   color: #fff;
   background: rgba(78, 86, 94, 0.5);
-  border-radius: 20px;
 }
 nav ul > li > a {
   color: #3c3b3b;
@@ -784,6 +783,7 @@ nav ul > li > a {
   line-height: 2em;
   display: block;
   padding: 0 18px;
+  border-radius: 20px;
   -webkit-transition: all 0.2s ease-in;
   -moz-transition: all 0.2s ease-in;
   -o-transition: all 0.2s ease-in;
@@ -799,18 +799,20 @@ nav ul > li > a {
   padding: 0;
   width: 100%;
   background-color: rgba(68, 75, 82, 0.9);
-  -webkit-transition: padding 0.1s ease-in, visibility 0 linear 0.1s;
-  -o-transition: padding 0.1s ease-in, visibility 0 linear 0.1s;
-  -moz-transition: padding 0.1s ease-in, visibility 0 linear 0.1s;
-  transition: padding 0.1s ease-in, visibility 0 linear 0.1s;
+  opacity: 0;
+  -webkit-transition: padding 0.1s ease-out 0.2s, visibility 0 linear 0.4s, opacity 0.2s ease-in 0.2s;
+  -o-transition: padding 0.1s ease-out 0.2s, visibility 0 linear 0.4s, opacity 0.2s ease-in 0.2s;
+  -moz-transition: padding 0.1s ease-out 0.2s, visibility 0 linear 0.4s, opacity 0.2s ease-in 0.2s;
+  transition: padding 0.1s ease-out 0.2s, visibility 0 linear 0.4s, opacity 0.2s ease-in 0.2s;
 }
 .navcontainer.active {
+  opacity: 1;
   visibility: visible;
   padding: 2px 0;
-  -webkit-transition: padding 0.1s ease-in;
-  -o-transition: padding 0.1s ease-in;
-  -moz-transition: padding 0.1s ease-in;
-  transition: padding 0.1s ease-in;
+  -webkit-transition: padding 0.1s ease-out;
+  -o-transition: padding 0.1s ease-out;
+  -moz-transition: padding 0.1s ease-out;
+  transition: padding 0.1s ease-out;
 }
 .navcontainer a.navcontainer-top {
   font-size: 95%;
@@ -1309,6 +1311,10 @@ ul.extlogin-links > li.extlogin-sina > a {
   width: 33.3%;
   text-align: center;
   color: #525262;
+  background: url(../images/shadow_categorization_li.png) right 255px no-repeat;
+}
+.categorization > ul > li:last-child {
+  background: none;
 }
 .categorization > ul > li.categorization-suppliers > .categorization-pic {
   background: url(../images/bg_suppliers.jpg) center top no-repeat;
@@ -1349,6 +1355,23 @@ ul.extlogin-links > li.extlogin-sina > a {
 }
 .categorization > ul > li > .btn.btn-primary > .caret {
   border-left-color: #fff;
+}
+.categorization .categorization-shadow-l,
+.categorization .categorization-shadow-r {
+  width: 67px;
+  height: 255px;
+  position: absolute;
+  top: 0;
+  background-repeat: no-repeat;
+  background-position: top left;
+}
+.categorization .categorization-shadow-l {
+  left: -67px;
+  background-image: url(../images/shadow_categorization_l.png);
+}
+.categorization .categorization-shadow-r {
+  right: -67px;
+  background-image: url(../images/shadow_categorization_r.png);
 }
 .howitworks {
   padding: 30px 0 50px;
@@ -1422,7 +1445,7 @@ ul.extlogin-links > li.extlogin-sina > a {
   background: url(../images/bg_freecustomsdata.jpg) center center no-repeat;
 }
 .freecustoms .freecustoms-content {
-  margin-top: 350px;
+  margin-top: 280px;
 }
 .herotestimonial > ul {
   min-height: 856px;

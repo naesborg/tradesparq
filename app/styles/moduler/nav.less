@@ -20,7 +20,6 @@ nav
 			{
 				color: #fff;
 				background: rgba(78, 86, 94, .5);
-				border-radius: 20px;
 			}
 			> a
 			{
@@ -29,6 +28,7 @@ nav
 				line-height: 2em;
 				display: block;
 				padding: 0 18px;
+				border-radius: 20px;
 
 				-webkit-transition: all 0.2s ease-in;
 				-moz-transition: all 0.2s ease-in;
@@ -49,21 +49,23 @@ nav
 	padding: 0;
 	width: 100%;
 	background-color: rgba(68, 75, 82, 0.9);
+	opacity: 0;
 
-    -webkit-transition: padding .1s ease-in, visibility 0 linear .1s;
-	-o-transition: padding .1s ease-in, visibility 0 linear .1s;
-	-moz-transition: padding .1s ease-in, visibility 0 linear .1s;
-	transition: padding .1s ease-in, visibility 0 linear .1s;
+    -webkit-transition: padding .1s ease-out .2s, visibility 0 linear .4s, opacity .2s ease-in .2s;
+	-o-transition: padding .1s ease-out .2s, visibility 0 linear .4s, opacity .2s ease-in .2s;
+	-moz-transition: padding .1s ease-out .2s, visibility 0 linear .4s, opacity .2s ease-in .2s;
+	transition: padding .1s ease-out .2s, visibility 0 linear .4s, opacity .2s ease-in .2s;
 
 	&.active
 	{
+		opacity: 1;
 		visibility: visible;
 		padding: 2px 0;
 
-	    -webkit-transition: padding .1s ease-in;
-		-o-transition: padding .1s ease-in;
-		-moz-transition: padding .1s ease-in;
-		transition: padding .1s ease-in;
+	    -webkit-transition: padding .1s ease-out;
+		-o-transition: padding .1s ease-out;
+		-moz-transition: padding .1s ease-out;
+		transition: padding .1s ease-out;
 	}
 
 	a.navcontainer-top
