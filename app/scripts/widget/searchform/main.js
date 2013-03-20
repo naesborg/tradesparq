@@ -21,7 +21,6 @@ define(['jquery', 'text!./index.html'], function($, template) {
 			var $searchbarFormContainer = $searchbar.find(".fn-searchformcontainer");
 			var $searchForm = $(template);
 
-
 			function adsorbSearch() {
 				$navContainerInner.append($nav)
 				$navContainer.addClass(HANG_NAV_ACTIVE_CLASS);

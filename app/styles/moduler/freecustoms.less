@@ -1,94 +1,98 @@
 /* + Customs data */
 .freecustoms
 {
+	position: relative;
 	overflow: hidden;
 
 	.freecustoms-fixed
 	{
-		position: relative;
+		height: 200%;
+		width: 100%;
+		position: absolute;
 		top: 0;
 		left: 0;
 		background-color: #444b52;
 		overflow: hidden;
+	}
+	.freecustoms-content
+	{
+		position: relative;
+		z-index: 1;
+		color: #fff;
+		padding-left: 10px;
+		margin: 40px 0 80px 0;
 
-		.freecustoms-content
+		.txtguide
 		{
-			color: #fff;
-			padding-left: 10px;
-			margin: 40px 0 80px 0;
+			font-size: 19px;
+			margin: 0;
 
-			.txtguide
+			strong
 			{
-				font-size: 19px;
-				margin: 0;
+				font-size: 115%
+			}
+			img
+			{
+				vertical-align: text-bottom;
+				position: relative;
+				top: 1px;
+			}
+		}
+		h2
+		{
+			margin: 0 0 5px;
+			line-height: 1.1em;
+			font-size: 60px;
+			font-weight: bolder;
+		}
+		.txtdes
+		{
+			font-size: 20px;
+			line-height: 1.3em;
+		}
+		.btn-warning.btn-large
+		{
+			padding: 9px 20px;
+			color: #000;
+			font-size: 14px;
+		}
+		.btn-group .dropdown-toggle .caret
+		{
+			border-top-color: #000;
+		}
+		.freecustoms-search
+		{
+			border: 1px solid #ffba00;
+			border-radius: 5px;
+			box-shadow: 0 2px 0 rgba(84, 73, 11, .16), 0 1px 0 rgba(255, 255, 255, .38) inset;
+		    background-image: linear-gradient(bottom, #ffb400 0%, #ffc000 100%);
+		    background-image: -o-linear-gradient(bottom, #ffb400 0%, #ffc000 100%);
+		    background-image: -moz-linear-gradient(bottom, #ffb400 0%, #ffc000 100%);
+		    background-image: -webkit-linear-gradient(bottom, #ffb400 0%, #ffc000 100%);
+		    background-image: -ms-linear-gradient(bottom, #ffb400 0%, #ffc000 100%);
+		    line-height: 38px;
 
-				strong
-				{
-					font-size: 115%
-				}
-				img
-				{
-					vertical-align: text-bottom;
-					position: relative;
-					top: 1px;
-				}
-			}
-			h2
+			> span
 			{
-				margin: 0 0 5px;
-				line-height: 1.1em;
-				font-size: 60px;
-				font-weight: bolder;
-			}
-			.txtdes
-			{
-				font-size: 20px;
-				line-height: 1.3em;
-			}
-			.btn-warning.btn-large
-			{
-				padding: 9px 20px;
 				color: #000;
 				font-size: 14px;
 			}
-			.btn-group .dropdown-toggle .caret
+			> .caret
 			{
-				border-top-color: #000;
+				margin: 15px 0 0 5px;
+				border-width: 5px;
+				border-style: solid;
+				border-color: transparent;
+				border-left-color: #000;
 			}
-			.freecustoms-search
+			.form-search
 			{
-				border: 1px solid #ffba00;
-				border-radius: 5px;
-				box-shadow: 0 2px 0 rgba(84, 73, 11, .16), 0 1px 0 rgba(255, 255, 255, .38) inset;
-			    background-image: linear-gradient(bottom, #ffb400 0%, #ffc000 100%);
-			    background-image: -o-linear-gradient(bottom, #ffb400 0%, #ffc000 100%);
-			    background-image: -moz-linear-gradient(bottom, #ffb400 0%, #ffc000 100%);
-			    background-image: -webkit-linear-gradient(bottom, #ffb400 0%, #ffc000 100%);
-			    background-image: -ms-linear-gradient(bottom, #ffb400 0%, #ffc000 100%);
-			    line-height: 38px;
-
-				> span
-				{
-					color: #000;
-					font-size: 14px;
-				}
-				> .caret
-				{
-					margin: 15px 0 0 5px;
-					border-width: 5px;
-					border-style: solid;
-					border-color: transparent;
-					border-left-color: #000;
-				}
-				.form-search
-				{
-					margin: 4px 10px 0 20px;
-				}
-				.form-search .input-append .search-query
-				{
-					width: 350px;
-					border-color: rgba(49, 53, 59, .56);
-				}
+				margin: 4px 10px 0 20px;
+			}
+			.form-search .input-append .search-query
+			{
+				width: 350px;
+				border-color: rgba(49, 53, 59, .56);
 			}
 		}
 	}

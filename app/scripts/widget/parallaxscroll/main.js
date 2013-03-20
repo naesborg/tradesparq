@@ -6,6 +6,8 @@ define(['jquery'], function($) {
     var SLIDE_CLASS = ".fn-slide";
     var SLIDE_PARALLAX_CLASS = ".fn-slide li.slideactive";
     var SLIDE_DES_CLASS = ".herotestimonial-des";
+    var VIEWPORT_HEIGHT = window.innerHeight || document.body.clientHeight;
+    
     var $window = $(window);
 
     return {
@@ -14,12 +16,14 @@ define(['jquery'], function($) {
             var $freecustoms = $(".fn-freecustoms");
             var $freecustomsFixed = $(".fn-freecustoms-fixed");
             var heightFreeCustoms = $freecustoms.height();
-            DEFAULT_FREECUSTOMS_TOP = $("header").height() + $(".navcontainer").height() + 4 || DEFAULT_FREECUSTOMS_TOP;
-            var absFreeCustomsTopTemp = DEFAULT_FREECUSTOMS_TOP + heightFreeCustoms;
-            $freecustomsFixed.css("top", ($freecustoms.get(0).getBoundingClientRect().top-DEFAULT_FREECUSTOMS_TOP) * -1);
+            var heightFreeCustomsFixed = $freecustomsFixed.height();
+            var parallaxRate = (heightFreeCustomsFixed - heightFreeCustoms) / (VIEWPORT_HEIGHT + heightFreeCustoms);
+            var absFreeCustomsTop = $freecustoms.get(0).getBoundingClientRect().top;
+            $freecustomsFixed.css("top", ((heightFreeCustomsFixed - heightFreeCustoms)-(VIEWPORT_HEIGHT - absFreeCustomsTop) * parallaxRate) * -1);
 
             // Attach window scroll event
             $window.scroll(function() {
+                var scrollTop = $window.scrollTop();
                 // Slide parallax
                 (function(){
                     var $activeSlide = $(SLIDE_PARALLAX_CLASS);
@@ -27,7 +31,6 @@ define(['jquery'], function($) {
                     var $activeSlideDes = $activeSlide.find(SLIDE_DES_CLASS);
                     var $slideButton = $(SLIDE_CLASS).find("a");
                     var MIN_HEIGHT = $activeSlide.height() || DEFAULT_MIN_HEIGHT;
-                    var scrollTop = $window.scrollTop();
                     if (scrollTop > MIN_HEIGHT) {
                         return;
                     }
@@ -39,10 +42,13 @@ define(['jquery'], function($) {
                 })();
 
                 // Free customs parallax
-                var absFreeCustomsTop = $freecustoms.get(0).getBoundingClientRect().top;
-                if((absFreeCustomsTop - heightFreeCustoms) <= DEFAULT_FREECUSTOMS_TOP){
-                    $freecustomsFixed.css("top", (heightFreeCustoms-(absFreeCustomsTopTemp-absFreeCustomsTop)) * -1);
-                }
+                (function(){
+                    var absFreeCustomsTop = $freecustoms.get(0).getBoundingClientRect().top;
+                    if(absFreeCustomsTop > VIEWPORT_HEIGHT || absFreeCustomsTop < -1 * heightFreeCustoms){
+                        return;
+                    }
+                    $freecustomsFixed.css("top", ((heightFreeCustomsFixed - heightFreeCustoms)-(VIEWPORT_HEIGHT - absFreeCustomsTop) * parallaxRate) * -1);
+                })();
 
             });
 
