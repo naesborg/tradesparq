@@ -364,7 +364,7 @@ define('text',['module'], function (module) {
     }
     return text;
 });
-define('text!widget/searchform/index.html',[],function () { return '<form class="form-search">\n    <div class="input-append">\n        <input type="text" name="user_search" class="span2 search-query opensans" placeholder="Search for products, people &amp; company">\n        <button type="submit" class="">Search</button>\n    </div>\n</form>\n';});
+define('text!widget/searchform/index.html',[],function () { return '<form class="form-search">\r\n    <div class="input-append">\r\n        <input type="text" name="user_search" class="span2 search-query opensans" placeholder="Search for products, people &amp; company">\r\n        <button type="submit" class="">Search</button>\r\n    </div>\r\n</form>\r\n';});
 
 define('widget/searchform/main',['jquery', 'text!./index.html'], function($, template) {
 
@@ -541,7 +541,7 @@ define('widget/blurb/main',[],function(){
 		return "";
 	};
 });
-define('text!widget/language/index.html',[],function () { return '<div class="btn-group">\n    <a class="btn dropdown-toggle" data-toggle="dropdown" href="#"><span class="flag-en"></span>English<span class="caret"></span>\n    </a>\n    <ul class="dropdown-menu">\n        <li class="dropdown-arrow"><span class="caret"></span></li>\n        <li>\n            <a href=""><span data-lng="en" class="flag-en"></span>English</a>\n        </li>\n        <li>\n            <a href=""><span data-lng="cn" class="flag-cn"></span>Chinese</a>\n        </li>\n    </ul>\n</div>\n';});
+define('text!widget/language/index.html',[],function () { return '<div class="btn-group">\r\n    <a class="btn dropdown-toggle" data-toggle="dropdown" href="#"><span class="flag-en"></span>English<span class="caret"></span>\r\n    </a>\r\n    <ul class="dropdown-menu">\r\n        <li class="dropdown-arrow"><span class="caret"></span></li>\r\n        <li>\r\n            <a href=""><span data-lng="en" class="flag-en"></span>English</a>\r\n        </li>\r\n        <li>\r\n            <a href=""><span data-lng="cn" class="flag-cn"></span>Chinese</a>\r\n        </li>\r\n    </ul>\r\n</div>\r\n';});
 
 define('widget/language/main',["jquery", "jquery.cookie", "../blurb/main", "text!./index.html"], function($, cookie, blurbs, template) {
 
@@ -2579,7 +2579,7 @@ define('widget/language/main',["jquery", "jquery.cookie", "../blurb/main", "text
 }(window, document, jQuery));
 define("fancybox", function(){});
 
-define('text!widget/login/index.html',[],function () { return '<div class="cf inlineblock enrollment">\n\t<h2>Sign up now for free!</h2>\n\t<div class="enrollmentform col-l">\n\t\t<form class="form-horizontal">\n\t\t  <div class="control-group mt-15">\n\t\t    <div class="controls">\n\t\t      <input type="email" name="email" required id="inputEmail" placeholder="Email">\n\t\t    </div>\n\t\t  </div>\n\t\t  <div class="control-group">\n\t\t    <div class="controls">\n\t\t      <input type="password" required id="inputPassword" placeholder="Password">\n\t\t    </div>\n\t\t  </div>\n\t\t  <div class="control-group">\n\t\t    <div class="controls cf">\n\t\t      <button type="submit" class="btn btn-primary btn-large">Join</button>\n\t\t      <label class="checkbox">\n\t\t        <input type="checkbox">Remember my password.\n\t\t      </label>\n\t\t    </div>\n\t\t  </div>\n\t\t</form>\n\t</div>\n\t<div class="servicelogin col-l">\n\t\t<p>Or...Login with you favorite service</p>\n        <ul class="col-r extlogin-links hor">\n            <li class="extlogin-facebook">\n                <a href="//www.facebook.com"></a>\n            </li>\n            <li class="extlogin-google">\n                <a href="//www.google.com"></a>\n            </li>\n            <li class="extlogin-yahoo">\n                <a href="//www.yahoo.com"></a>\n            </li>\n            <li class="extlogin-linkedin">\n                <a href="//www.linkedin.com"></a>\n            </li>\n            <li class="extlogin-tencent">\n                <a href="//www.tencent.com"></a>\n            </li>\n            <li class="extlogin-sina">\n                <a href="//www.sina.com"></a>\n            </li>\n        </ul>\n\t</div>\n</div>';});
+define('text!widget/login/index.html',[],function () { return '<div class="cf inlineblock enrollment">\r\n\t<h2>Sign up now for free!</h2>\r\n\t<div class="enrollmentform col-l">\r\n\t\t<form class="form-horizontal">\r\n\t\t  <div class="control-group mt-15">\r\n\t\t    <div class="controls">\r\n\t\t      <input type="email" name="email" required id="inputEmail" placeholder="Email">\r\n\t\t    </div>\r\n\t\t  </div>\r\n\t\t  <div class="control-group">\r\n\t\t    <div class="controls">\r\n\t\t      <input type="password" required id="inputPassword" placeholder="Password">\r\n\t\t    </div>\r\n\t\t  </div>\r\n\t\t  <div class="control-group">\r\n\t\t    <div class="controls cf">\r\n\t\t      <button type="submit" class="btn btn-primary btn-large">Join</button>\r\n\t\t      <label class="checkbox">\r\n\t\t        <input type="checkbox">Remember my password.\r\n\t\t      </label>\r\n\t\t    </div>\r\n\t\t  </div>\r\n\t\t</form>\r\n\t</div>\r\n\t<div class="servicelogin col-l">\r\n\t\t<p>Or...Login with you favorite service</p>\r\n        <ul class="col-r extlogin-links hor">\r\n            <li class="extlogin-facebook">\r\n                <a href="//www.facebook.com"></a>\r\n            </li>\r\n            <li class="extlogin-google">\r\n                <a href="//www.google.com"></a>\r\n            </li>\r\n            <li class="extlogin-yahoo">\r\n                <a href="//www.yahoo.com"></a>\r\n            </li>\r\n            <li class="extlogin-linkedin">\r\n                <a href="//www.linkedin.com"></a>\r\n            </li>\r\n            <li class="extlogin-tencent">\r\n                <a href="//www.tencent.com"></a>\r\n            </li>\r\n            <li class="extlogin-sina">\r\n                <a href="//www.sina.com"></a>\r\n            </li>\r\n        </ul>\r\n\t</div>\r\n</div>';});
 
 define('widget/login/main',["jquery", "fancybox", "text!./index.html"], function($, fancybox, template) {
 
@@ -2622,7 +2622,7 @@ define('widget/login/main',["jquery", "fancybox", "text!./index.html"], function
 		}
 	};
 });
-define('text!widget/signup/index.html',[],function () { return '<div class="cf inlineblock enrollment">\n\t<h2>Sign up now for free!</h2>\n\t<div class="enrollmentform col-l">\n\t\t<form class="form-horizontal">\n\t\t  <div class="control-group">\n\t\t    <div class="controls">\n\t\t      <input type="text" required id="inputName" placeholder="Name">\n\t\t    </div>\n\t\t  </div>\n\t\t  <div class="control-group">\n\t\t    <div class="controls">\n\t\t      <input type="email" name="email" required id="inputEmail" placeholder="Email">\n\t\t    </div>\n\t\t  </div>\n\t\t  <div class="control-group">\n\t\t    <div class="controls">\n\t\t      <input type="password" required id="inputPassword" placeholder="Password">\n\t\t    </div>\n\t\t  </div>\n\t\t  <div class="control-group">\n\t\t    <div class="controls">\n\t\t      <input type="password" required id="inputPasswordConfirm" placeholder="Confirm">\n\t\t    </div>\n\t\t  </div>\n\t\t  <div class="control-group">\n\t\t    <div class="controls cf">\n\t\t      <button type="submit" class="btn btn-primary btn-large">Join</button>\n\t\t      <label class="checkbox">\n\t\t        <input type="checkbox">I agree to the terms of use.\n\t\t      </label>\n\t\t    </div>\n\t\t  </div>\n\t\t</form>\n\t</div>\n\t<div class="servicelogin col-l">\n\t\t<p>Or...Login with you favorite service</p>\n        <ul class="col-r extlogin-links hor">\n            <li class="extlogin-facebook">\n                <a href="//www.facebook.com"></a>\n            </li>\n            <li class="extlogin-google">\n                <a href="//www.google.com"></a>\n            </li>\n            <li class="extlogin-yahoo">\n                <a href="//www.yahoo.com"></a>\n            </li>\n            <li class="extlogin-linkedin">\n                <a href="//www.linkedin.com"></a>\n            </li>\n            <li class="extlogin-tencent">\n                <a href="//www.tencent.com"></a>\n            </li>\n            <li class="extlogin-sina">\n                <a href="//www.sina.com"></a>\n            </li>\n        </ul>\n\t</div>\n</div>';});
+define('text!widget/signup/index.html',[],function () { return '<div class="cf inlineblock enrollment">\r\n\t<h2>Sign up now for free!</h2>\r\n\t<div class="enrollmentform col-l">\r\n\t\t<form class="form-horizontal">\r\n\t\t  <div class="control-group">\r\n\t\t    <div class="controls">\r\n\t\t      <input type="text" required id="inputName" placeholder="Name">\r\n\t\t    </div>\r\n\t\t  </div>\r\n\t\t  <div class="control-group">\r\n\t\t    <div class="controls">\r\n\t\t      <input type="email" name="email" required id="inputEmail" placeholder="Email">\r\n\t\t    </div>\r\n\t\t  </div>\r\n\t\t  <div class="control-group">\r\n\t\t    <div class="controls">\r\n\t\t      <input type="password" required id="inputPassword" placeholder="Password">\r\n\t\t    </div>\r\n\t\t  </div>\r\n\t\t  <div class="control-group">\r\n\t\t    <div class="controls">\r\n\t\t      <input type="password" required id="inputPasswordConfirm" placeholder="Confirm">\r\n\t\t    </div>\r\n\t\t  </div>\r\n\t\t  <div class="control-group">\r\n\t\t    <div class="controls cf">\r\n\t\t      <button type="submit" class="btn btn-primary btn-large">Join</button>\r\n\t\t      <label class="checkbox">\r\n\t\t        <input type="checkbox">I agree to the terms of use.\r\n\t\t      </label>\r\n\t\t    </div>\r\n\t\t  </div>\r\n\t\t</form>\r\n\t</div>\r\n\t<div class="servicelogin col-l">\r\n\t\t<p>Or...Login with you favorite service</p>\r\n        <ul class="col-r extlogin-links hor">\r\n            <li class="extlogin-facebook">\r\n                <a href="//www.facebook.com"></a>\r\n            </li>\r\n            <li class="extlogin-google">\r\n                <a href="//www.google.com"></a>\r\n            </li>\r\n            <li class="extlogin-yahoo">\r\n                <a href="//www.yahoo.com"></a>\r\n            </li>\r\n            <li class="extlogin-linkedin">\r\n                <a href="//www.linkedin.com"></a>\r\n            </li>\r\n            <li class="extlogin-tencent">\r\n                <a href="//www.tencent.com"></a>\r\n            </li>\r\n            <li class="extlogin-sina">\r\n                <a href="//www.sina.com"></a>\r\n            </li>\r\n        </ul>\r\n\t</div>\r\n</div>';});
 
 define('widget/signup/main',["jquery", "fancybox", "text!./index.html"], function($, fancybox, template) {
 
@@ -2733,6 +2733,58 @@ define('widget/slide/main',['jquery'], function() {
 	}
 
 });
+/*!
+ * jquery.scrollto.js 0.0.1 - https://github.com/yckart/jquery.scrollto.js
+ * Scroll smooth to any element in your DOM.
+ *
+ * Copyright (c) 2012 Yannick Albert (http://yckart.com)
+ * Licensed under the MIT license (http://www.opensource.org/licenses/mit-license.php).
+ * 2013/02/17
+ **/
+$.scrollTo = $.fn.scrollTo = function(x, y, options){
+    if (!(this instanceof $)) return $.fn.scrollTo.apply($('html, body'), arguments);
+
+    options = $.extend({}, {
+        gap: {
+            x: 0,
+            y: 0
+        },
+        animation: {
+            easing: 'swing',
+            duration: 600,
+            complete: $.noop,
+            step: $.noop
+        }
+    }, options);
+
+    return this.each(function(){
+        var elem = $(this);
+        elem.stop().animate({
+            scrollLeft: !isNaN(Number(x)) ? x : $(y).offset().left + options.gap.x,
+            scrollTop: !isNaN(Number(y)) ? y : $(y).offset().top + options.gap.y
+        }, options.animation);
+    });
+};
+define("jquery.scrollto", function(){});
+
+define('widget/nav/main',['jquery', 'jquery.scrollto'], function($) {
+    
+
+
+    return {
+        'init': function() {
+            $('nav li a').click(function(e){
+                $('html,body').scrollTo(this.hash, this.hash);
+                e.preventDefault();
+            });
+            $("a.navcontainer-top").click(function(e){
+                $('html,body').scrollTo(this.hash, this.hash);
+                e.preventDefault();
+            });
+        }
+    };
+
+});
 define('widget/parallaxscroll/main',['jquery'], function($) {
     
 
@@ -2806,6 +2858,7 @@ define("modernizr", function(){});
             "jquery": '../vendor/jquery/1.8.3/jquery.min',
             "jquery-ui": '../vendor/jquery-ui/1.10.0/jquery-ui',
             "jquery.cookie": "../vendor/jquery.cookie/1.3.1/jquery.cookie",
+            "jquery.scrollto": "../vendor/jquery.scrollto/0.0.1/jquery.scrollto",
             "modernizr": "../vendor/modernizr/2.6.1/modernizr.min",
             "fancybox": "../vendor/fancybox/2.1.4/jquery.fancybox",
             "text": "../vendor/text/2.0.5+/text",
@@ -2816,6 +2869,9 @@ define("modernizr", function(){});
                 deps: ['jquery']
             },
             "jquery.cookie": {
+                deps: ['jquery']
+            },
+            "jquery.scrollto": {
                 deps: ['jquery']
             },
             'jquery-ui': {
@@ -2831,9 +2887,10 @@ define("modernizr", function(){});
         , 'widget/login/main'
         , 'widget/signup/main'
         , 'widget/slide/main'
+        , 'widget/nav/main'
         , 'widget/parallaxscroll/main'
         , 'modernizr']
-        , function(parentRequire, $, searchForm, Language, login, signup, parallaxScroll, slide) {
+        , function(parentRequire, $, searchForm, Language, login, signup,nav, parallaxScroll, slide) {
         $(document).ready(function() {
             // Initial language settings
             var language = Language();
@@ -2846,6 +2903,8 @@ define("modernizr", function(){});
             searchForm.init();
             // Slide show
             slide.init();
+            // Nav scroll to
+            nav.init();
             // Parallax Scroll
             parallaxScroll.init();
         });

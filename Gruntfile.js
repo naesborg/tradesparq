@@ -3,13 +3,14 @@ module.exports = function(grunt) {
 
   var EMPTY = "empty:";
   var PATH_REQUIREJS = {
-    "jquery": 'vendor/jquery/1.8.3/jquery.min',
-    "jquery-ui": 'vendor/jquery-ui/1.10.0/jquery-ui',
-    "jquery.cookie": "vendor/jquery.cookie/1.3.1/jquery.cookie",
-    "modernizr": "vendor/modernizr/2.6.1/modernizr.min",
-    "fancybox": "vendor/fancybox/2.1.4/jquery.fancybox",
-    "text": "vendor/text/2.0.5+/text",
-    "widget": "widget/"
+            "jquery": 'vendor/jquery/1.8.3/jquery.min',
+            "jquery-ui": 'vendor/jquery-ui/1.10.0/jquery-ui',
+            "jquery.cookie": "vendor/jquery.cookie/1.3.1/jquery.cookie",
+            "jquery.scrollto": "vendor/jquery.scrollto/0.0.1/jquery.scrollto",
+            "modernizr": "vendor/modernizr/2.6.1/modernizr.min",
+            "fancybox": "vendor/fancybox/2.1.4/jquery.fancybox",
+            "text": "vendor/text/2.0.5+/text",
+            "widget": "widget/"
   };
   //
   // Grunt configuration:

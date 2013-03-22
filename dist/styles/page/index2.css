@@ -617,10 +617,6 @@ a:hover {
 li {
   list-style: none;
 }
-body > div {
-  max-width: 1532px;
-  margin: 0 auto;
-}
 .page-width {
   width: 1024px;
   margin-left: auto;
@@ -900,6 +896,7 @@ nav ul > li > a {
 /* - Hero testimonial */
 .herotestimonial {
   position: relative;
+  background-color: #252531;
   /* - Slide Button */
 
 }
@@ -1056,20 +1053,20 @@ nav ul > li > a {
   overflow: hidden;
 }
 .freecustoms .freecustoms-fixed {
-  height: 200%;
   width: 100%;
+  height: 897px;
   position: absolute;
   top: 0;
   left: 0;
-  background-color: #444b52;
   overflow: hidden;
+  background: #444b52 url(../images/bg_freecustomsdata.jpg) center center no-repeat;
 }
 .freecustoms .freecustoms-content {
   position: relative;
   z-index: 1;
   color: #fff;
   padding-left: 10px;
-  margin: 40px 0 80px 0;
+  margin: 200px 0 60px 0;
 }
 .freecustoms .freecustoms-content .txtguide {
   font-size: 19px;
@@ -1307,8 +1304,8 @@ ul.extlogin-links > li.extlogin-sina > a {
   margin: 0;
 }
 .categorization > ul > li {
-  padding: 1px 0 52px 0;
-  width: 33.3%;
+  padding-bottom: 52px;
+  width: 341px;
   text-align: center;
   color: #525262;
   background: url(../images/shadow_categorization_li.png) right 255px no-repeat;
@@ -1326,6 +1323,7 @@ ul.extlogin-links > li.extlogin-sina > a {
   background: url(../images/bg_supplychain.jpg) center top no-repeat;
 }
 .categorization > ul > li > .categorization-pic {
+  margin: 1px 0 0 1px;
   min-height: 255px;
 }
 .categorization > ul > li > h3 {
@@ -1439,13 +1437,6 @@ ul.extlogin-links > li.extlogin-sina > a {
 }
 .cedric {
   background-color: #fff;
-}
-.freecustoms .freecustoms-fixed {
-  height: 897px;
-  background: url(../images/bg_freecustomsdata.jpg) center center no-repeat;
-}
-.freecustoms .freecustoms-content {
-  margin-top: 280px;
 }
 .herotestimonial > ul {
   min-height: 856px;
