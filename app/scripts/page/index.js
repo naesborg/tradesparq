@@ -6,6 +6,7 @@
             "jquery": '../vendor/jquery/1.8.3/jquery.min',
             "jquery-ui": '../vendor/jquery-ui/1.10.0/jquery-ui',
             "jquery.cookie": "../vendor/jquery.cookie/1.3.1/jquery.cookie",
+            "jquery.scrollto": "../vendor/jquery.scrollto/0.0.1/jquery.scrollto",
             "modernizr": "../vendor/modernizr/2.6.1/modernizr.min",
             "fancybox": "../vendor/fancybox/2.1.4/jquery.fancybox",
             "text": "../vendor/text/2.0.5+/text",
@@ -16,6 +17,9 @@
                 deps: ['jquery']
             },
             "jquery.cookie": {
+                deps: ['jquery']
+            },
+            "jquery.scrollto": {
                 deps: ['jquery']
             },
             'jquery-ui': {
@@ -31,9 +35,10 @@
         , 'widget/login/main'
         , 'widget/signup/main'
         , 'widget/slide/main'
+        , 'widget/nav/main'
         , 'widget/parallaxscroll/main'
         , 'modernizr']
-        , function(parentRequire, $, searchForm, Language, login, signup, parallaxScroll, slide) {
+        , function(parentRequire, $, searchForm, Language, login, signup,nav, parallaxScroll, slide) {
         $(document).ready(function() {
             // Initial language settings
             var language = Language();
@@ -46,6 +51,8 @@
             searchForm.init();
             // Slide show
             slide.init();
+            // Nav scroll to
+            nav.init();
             // Parallax Scroll
             parallaxScroll.init();
         });
