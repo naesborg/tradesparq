@@ -3,6 +3,7 @@
 @import "../moduler/font.less";
 @import "../moduler/base.less";
 @import "../moduler/global.less";
+@import "../moduler/animate.less";
 @import "../moduler/header.less";
 @import "../moduler/footer.less";
 @import "../moduler/nav.less";
@@ -17,6 +18,7 @@
 @import "../moduler/enrollment.less";
 @import "../moduler/extlogin-links.less";
 
+@import "../moduler/howitworks.less";
 @import "../moduler/banner.less";
 
 .herotestimonial
@@ -112,6 +114,7 @@
 .layout-up-container
 {
 	position: relative;
+	z-index: 1;
 	height: 0;
 	
 	> .layout-up
@@ -119,5 +122,6 @@
 		width: 100%;
 		position: absolute;
 		bottom: 0;
+		overflow: hidden;
 	}
 }

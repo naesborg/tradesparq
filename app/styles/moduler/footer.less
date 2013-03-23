@@ -29,27 +29,18 @@ footer
 			}
 		}
 	}
-	ul.ext-link > li
+	ul.ext-link
 	{
-		> a
+		margin: 0 10px 0 0;
+
+		> li
 		{
-			display: block;
-			width: 100px;
-			height: 24px;
-			background-image: url(../images/link_social.png);
-			background-repeat: no-repeat;
-		}
-		&.ext-link-facebook > a
-		{
-			background-position: left center;
-		}
-		&.ext-link-twitter > a
-		{
-			background-position: center center;
-		}
-		&.ext-link-youtube > a
-		{
-			background-position: right center;
-		}
+			padding: 0 0 0 20px;
+			> a
+			{
+				display: block;
+				line-height: 0;
+			}
+		}		
 	}
 }

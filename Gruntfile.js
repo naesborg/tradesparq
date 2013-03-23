@@ -115,6 +115,7 @@ module.exports = function(grunt) {
         },
         files: {
           'dist/styles/images/': 'app/styles/images/**/*',
+          'dist/styles/logo/': 'app/styles/logo/**/*',
           'dist/styles/slide/': 'app/styles/slide/**/*'
         }
       }

@@ -364,7 +364,7 @@ define('text',['module'], function (module) {
     }
     return text;
 });
-define('text!widget/searchform/index.html',[],function () { return '<form class="form-search">\r\n    <div class="input-append">\r\n        <input type="text" name="user_search" class="span2 search-query opensans" placeholder="Search for products, people &amp; company">\r\n        <button type="submit" class="">Search</button>\r\n    </div>\r\n</form>\r\n';});
+define('text!widget/searchform/index.html',[],function () { return '<form class="form-search">\n    <div class="input-append">\n        <input type="text" name="user_search" class="span2 search-query opensans" placeholder="Search for products, people &amp; company">\n        <button type="submit" class="">Search</button>\n    </div>\n</form>\n';});
 
 define('widget/searchform/main',['jquery', 'text!./index.html'], function($, template) {
 
@@ -541,7 +541,7 @@ define('widget/blurb/main',[],function(){
 		return "";
 	};
 });
-define('text!widget/language/index.html',[],function () { return '<div class="btn-group">\r\n    <a class="btn dropdown-toggle" data-toggle="dropdown" href="#"><span class="flag-en"></span>English<span class="caret"></span>\r\n    </a>\r\n    <ul class="dropdown-menu">\r\n        <li class="dropdown-arrow"><span class="caret"></span></li>\r\n        <li>\r\n            <a href=""><span data-lng="en" class="flag-en"></span>English</a>\r\n        </li>\r\n        <li>\r\n            <a href=""><span data-lng="cn" class="flag-cn"></span>Chinese</a>\r\n        </li>\r\n    </ul>\r\n</div>\r\n';});
+define('text!widget/language/index.html',[],function () { return '<div class="btn-group">\n    <a class="btn dropdown-toggle" data-toggle="dropdown" href="#"><span class="flag-en"></span>English<span class="caret"></span>\n    </a>\n    <ul class="dropdown-menu">\n        <li class="dropdown-arrow"><span class="caret"></span></li>\n        <li>\n            <a href=""><span data-lng="en" class="flag-en"></span>English</a>\n        </li>\n        <li>\n            <a href=""><span data-lng="cn" class="flag-cn"></span>Chinese</a>\n        </li>\n    </ul>\n</div>\n';});
 
 define('widget/language/main',["jquery", "jquery.cookie", "../blurb/main", "text!./index.html"], function($, cookie, blurbs, template) {
 
@@ -589,6 +589,13 @@ define('widget/language/main',["jquery", "jquery.cookie", "../blurb/main", "text
 		// Return object
 		var o = {};
 		o.$el = $template;
+        o.init = function(){
+
+            var me = this;
+            var $me = me.$el;
+
+        };
+
 		return o;
 	};
 
@@ -2579,7 +2586,7 @@ define('widget/language/main',["jquery", "jquery.cookie", "../blurb/main", "text
 }(window, document, jQuery));
 define("fancybox", function(){});
 
-define('text!widget/login/index.html',[],function () { return '<div class="cf inlineblock enrollment">\r\n\t<h2>Sign up now for free!</h2>\r\n\t<div class="enrollmentform col-l">\r\n\t\t<form class="form-horizontal">\r\n\t\t  <div class="control-group mt-15">\r\n\t\t    <div class="controls">\r\n\t\t      <input type="email" name="email" required id="inputEmail" placeholder="Email">\r\n\t\t    </div>\r\n\t\t  </div>\r\n\t\t  <div class="control-group">\r\n\t\t    <div class="controls">\r\n\t\t      <input type="password" required id="inputPassword" placeholder="Password">\r\n\t\t    </div>\r\n\t\t  </div>\r\n\t\t  <div class="control-group">\r\n\t\t    <div class="controls cf">\r\n\t\t      <button type="submit" class="btn btn-primary btn-large">Join</button>\r\n\t\t      <label class="checkbox">\r\n\t\t        <input type="checkbox">Remember my password.\r\n\t\t      </label>\r\n\t\t    </div>\r\n\t\t  </div>\r\n\t\t</form>\r\n\t</div>\r\n\t<div class="servicelogin col-l">\r\n\t\t<p>Or...Login with you favorite service</p>\r\n        <ul class="col-r extlogin-links hor">\r\n            <li class="extlogin-facebook">\r\n                <a href="//www.facebook.com"></a>\r\n            </li>\r\n            <li class="extlogin-google">\r\n                <a href="//www.google.com"></a>\r\n            </li>\r\n            <li class="extlogin-yahoo">\r\n                <a href="//www.yahoo.com"></a>\r\n            </li>\r\n            <li class="extlogin-linkedin">\r\n                <a href="//www.linkedin.com"></a>\r\n            </li>\r\n            <li class="extlogin-tencent">\r\n                <a href="//www.tencent.com"></a>\r\n            </li>\r\n            <li class="extlogin-sina">\r\n                <a href="//www.sina.com"></a>\r\n            </li>\r\n        </ul>\r\n\t</div>\r\n</div>';});
+define('text!widget/login/index.html',[],function () { return '<div class="cf inlineblock enrollment">\n\t<h2>Sign up now for free!</h2>\n\t<div class="enrollmentform col-l">\n\t\t<form class="form-horizontal">\n\t\t  <div class="control-group mt-15">\n\t\t    <div class="controls">\n\t\t      <input type="email" name="email" required id="inputEmail" placeholder="Email">\n\t\t    </div>\n\t\t  </div>\n\t\t  <div class="control-group">\n\t\t    <div class="controls">\n\t\t      <input type="password" required id="inputPassword" placeholder="Password">\n\t\t    </div>\n\t\t  </div>\n\t\t  <div class="control-group">\n\t\t    <div class="controls cf">\n\t\t      <button type="submit" class="btn btn-primary btn-large">Join</button>\n\t\t      <label class="checkbox">\n\t\t        <input type="checkbox">Remember my password.\n\t\t      </label>\n\t\t    </div>\n\t\t  </div>\n\t\t</form>\n\t</div>\n\t<div class="servicelogin col-l">\n\t\t<p>Or...Login with you favorite service</p>\n        <ul class="col-r extlogin-links hor">\n            <li class="extlogin-facebook">\n                <a href="//www.facebook.com">\n                    <img src="styles/logo/logo_facebook.png" alt="Facebook">\n                </a>\n            </li>\n            <li class="extlogin-google">\n                <a href="//www.google.com">\n                    <img src="styles/logo/logo_google.png" alt="Google">\n                </a>\n            </li>\n            <li class="extlogin-yahoo">\n                <a href="//www.yahoo.com">\n                    <img src="styles/logo/logo_yahoo.png" alt="Yahoo">\n                </a>\n            </li>\n            <li class="extlogin-linkedin">\n                <a href="//www.linkedin.com">\n                    <img src="styles/logo/logo_linkedin.png" alt="LinkedIn">\n                </a>\n            </li>\n            <li class="extlogin-tencent">\n                <a href="//www.tencent.com">\n                    <img src="styles/logo/logo_tencent.png" alt="Tencent">\n                </a>\n            </li>\n            <li class="extlogin-sina">\n                <a href="//www.sina.com">\n                    <img src="styles/logo/logo_sina.png" alt="Sina">\n                </a>\n            </li>\n        </ul>\n\t</div>\n</div>';});
 
 define('widget/login/main',["jquery", "fancybox", "text!./index.html"], function($, fancybox, template) {
 
@@ -2622,7 +2629,7 @@ define('widget/login/main',["jquery", "fancybox", "text!./index.html"], function
 		}
 	};
 });
-define('text!widget/signup/index.html',[],function () { return '<div class="cf inlineblock enrollment">\r\n\t<h2>Sign up now for free!</h2>\r\n\t<div class="enrollmentform col-l">\r\n\t\t<form class="form-horizontal">\r\n\t\t  <div class="control-group">\r\n\t\t    <div class="controls">\r\n\t\t      <input type="text" required id="inputName" placeholder="Name">\r\n\t\t    </div>\r\n\t\t  </div>\r\n\t\t  <div class="control-group">\r\n\t\t    <div class="controls">\r\n\t\t      <input type="email" name="email" required id="inputEmail" placeholder="Email">\r\n\t\t    </div>\r\n\t\t  </div>\r\n\t\t  <div class="control-group">\r\n\t\t    <div class="controls">\r\n\t\t      <input type="password" required id="inputPassword" placeholder="Password">\r\n\t\t    </div>\r\n\t\t  </div>\r\n\t\t  <div class="control-group">\r\n\t\t    <div class="controls">\r\n\t\t      <input type="password" required id="inputPasswordConfirm" placeholder="Confirm">\r\n\t\t    </div>\r\n\t\t  </div>\r\n\t\t  <div class="control-group">\r\n\t\t    <div class="controls cf">\r\n\t\t      <button type="submit" class="btn btn-primary btn-large">Join</button>\r\n\t\t      <label class="checkbox">\r\n\t\t        <input type="checkbox">I agree to the terms of use.\r\n\t\t      </label>\r\n\t\t    </div>\r\n\t\t  </div>\r\n\t\t</form>\r\n\t</div>\r\n\t<div class="servicelogin col-l">\r\n\t\t<p>Or...Login with you favorite service</p>\r\n        <ul class="col-r extlogin-links hor">\r\n            <li class="extlogin-facebook">\r\n                <a href="//www.facebook.com"></a>\r\n            </li>\r\n            <li class="extlogin-google">\r\n                <a href="//www.google.com"></a>\r\n            </li>\r\n            <li class="extlogin-yahoo">\r\n                <a href="//www.yahoo.com"></a>\r\n            </li>\r\n            <li class="extlogin-linkedin">\r\n                <a href="//www.linkedin.com"></a>\r\n            </li>\r\n            <li class="extlogin-tencent">\r\n                <a href="//www.tencent.com"></a>\r\n            </li>\r\n            <li class="extlogin-sina">\r\n                <a href="//www.sina.com"></a>\r\n            </li>\r\n        </ul>\r\n\t</div>\r\n</div>';});
+define('text!widget/signup/index.html',[],function () { return '<div class="cf inlineblock enrollment">\n\t<h2>Sign up now for free!</h2>\n\t<div class="enrollmentform col-l">\n\t\t<form class="form-horizontal">\n\t\t  <div class="control-group">\n\t\t    <div class="controls">\n\t\t      <input type="text" required id="inputName" placeholder="Name">\n\t\t    </div>\n\t\t  </div>\n\t\t  <div class="control-group">\n\t\t    <div class="controls">\n\t\t      <input type="email" name="email" required id="inputEmail" placeholder="Email">\n\t\t    </div>\n\t\t  </div>\n\t\t  <div class="control-group">\n\t\t    <div class="controls">\n\t\t      <input type="password" required id="inputPassword" placeholder="Password">\n\t\t    </div>\n\t\t  </div>\n\t\t  <div class="control-group">\n\t\t    <div class="controls">\n\t\t      <input type="password" required id="inputPasswordConfirm" placeholder="Confirm">\n\t\t    </div>\n\t\t  </div>\n\t\t  <div class="control-group">\n\t\t    <div class="controls cf">\n\t\t      <button type="submit" class="btn btn-primary btn-large">Join</button>\n\t\t      <label class="checkbox">\n\t\t        <input type="checkbox">I agree to the terms of use.\n\t\t      </label>\n\t\t    </div>\n\t\t  </div>\n\t\t</form>\n\t</div>\n\t<div class="servicelogin col-l">\n\t\t<p>Or...Login with you favorite service</p>\n        <ul class="col-r extlogin-links hor">\n            <li class="extlogin-facebook">\n                <a href="//www.facebook.com">\n                    <img src="styles/logo/logo_facebook.png" alt="Facebook">\n                </a>\n            </li>\n            <li class="extlogin-google">\n                <a href="//www.google.com">\n                    <img src="styles/logo/logo_google.png" alt="Google">\n                </a>\n            </li>\n            <li class="extlogin-yahoo">\n                <a href="//www.yahoo.com">\n                    <img src="styles/logo/logo_yahoo.png" alt="Yahoo">\n                </a>\n            </li>\n            <li class="extlogin-linkedin">\n                <a href="//www.linkedin.com">\n                    <img src="styles/logo/logo_linkedin.png" alt="LinkedIn">\n                </a>\n            </li>\n            <li class="extlogin-tencent">\n                <a href="//www.tencent.com">\n                    <img src="styles/logo/logo_tencent.png" alt="Tencent">\n                </a>\n            </li>\n            <li class="extlogin-sina">\n                <a href="//www.sina.com">\n                    <img src="styles/logo/logo_sina.png" alt="Sina">\n                </a>\n            </li>\n        </ul>\n\t</div>\n</div>';});
 
 define('widget/signup/main',["jquery", "fancybox", "text!./index.html"], function($, fancybox, template) {
 
@@ -2770,11 +2777,17 @@ define("jquery.scrollto", function(){});
 define('widget/nav/main',['jquery', 'jquery.scrollto'], function($) {
     
 
+    var OPTION = {
+        gap: {
+            x: 0,
+            y: 84 * -1
+        }
+    };
 
     return {
         'init': function() {
-            $('nav li a').click(function(e){
-                $('html,body').scrollTo(this.hash, this.hash);
+            $('nav li a[data-async != "true"]').click(function(e){
+                $('html,body').scrollTo(this.hash, this.hash, OPTION);
                 e.preventDefault();
             });
             $("a.navcontainer-top").click(function(e){
@@ -2843,6 +2856,52 @@ define('widget/parallaxscroll/main',['jquery'], function($) {
     };
 
 });
+define('text!widget/cedricvideo/index.html',[],function () { return '<div class="mediaplayer-control">\n    <ul class="hor">\n        <li>\n            <a href="" class="fn-youku-cn">\n                <img src="styles/logo/logo_youku.png" alt="Youku">\n                <img src="styles/images/flag_cn.png" alt="Chinese">\n            </a>\n        </li>\n        <li>\n            <a href="" class="fn-youku-en">\n                <img src="styles/logo/logo_youku.png" alt="Youku">\n                <img src="styles/images/flag_en.png" alt="English">\n            </a>\n        </li>\n        <li>\n            <a href="" class="fn-youku-en">\n                <img src="styles/logo/logo_youtube.png" alt="Youtube">\n                <img src="styles/images/flag_en.png" alt="English">\n            </a>\n        </li>\n    </ul>\n</div>\n<div class="mediaplayer-videocontainer fn-mediaplayer-videocontainer"></div>\n';});
+
+define('widget/cedricvideo/main',['jquery', "text!./index.html"], function($, template) {
+    
+
+
+    var YOUKU_CN = "<iframe height=\"100%\" width=\"100%\" src=\"http://player.youku.com/embed/XNDc4NDkwODg4\" frameborder=\"0\" allowfullscreen></iframe>";
+    var YOUKU_EN = "<iframe height=\"100%\" width=\"100%\" src=\"http://player.youku.com/embed/XNDc4NDkwMzY4\" frameborder=\"0\" allowfullscreen></iframe>";
+    var YOUTUBE_EN = "<iframe width=\"100%\" height=\"100%\" src=\"http://www.youtube.com/embed/fxQ1JLh7U_c?rel=0\" frameborder=\"0\" allowfullscreen></iframe>";
+
+    var w = function() {
+
+        var $template = $(template);
+
+        (function init(){
+
+            var $videoContainer = $template.filter(".fn-mediaplayer-videocontainer");
+            $template.on("click", ".fn-youku-cn", function(e){
+                $videoContainer.empty().append(YOUKU_CN).show();
+                e.preventDefault();
+            }).on("click", ".fn-youku-en", function(e){
+                $videoContainer.empty().append(YOUKU_EN).show();
+                e.preventDefault();
+            }).on("click", ".fn-youtube-en", function(e){
+                $videoContainer.empty().append(YOUTUBE_EN).show();
+                e.preventDefault();
+            });
+           
+        })();
+        
+        // Return object
+        var o = {};
+        o.$el = $template;
+        o.init = function(){
+
+            var me = this;
+            var $me = me.$el;
+
+        };
+
+        return o;
+    };
+
+    return w;
+
+});
 /* Modernizr 2.6.1 (Custom Build) | MIT & BSD
  * Build: http://modernizr.com/download/#-fontface-backgroundsize-borderimage-borderradius-boxshadow-flexbox-hsla-multiplebgs-opacity-rgba-textshadow-cssanimations-csscolumns-generatedcontent-cssgradients-cssreflections-csstransforms-csstransforms3d-csstransitions-applicationcache-canvas-canvastext-draganddrop-hashchange-history-audio-video-indexeddb-input-inputtypes-localstorage-postmessage-sessionstorage-websockets-websqldatabase-webworkers-geolocation-inlinesvg-smil-svg-svgclippaths-touch-webgl-shiv-mq-cssclasses-addtest-prefixed-teststyles-testprop-testallprops-hasevent-prefixes-domprefixes-load
  */
@@ -2889,8 +2948,9 @@ define("modernizr", function(){});
         , 'widget/slide/main'
         , 'widget/nav/main'
         , 'widget/parallaxscroll/main'
+        , 'widget/cedricvideo/main'
         , 'modernizr']
-        , function(parentRequire, $, searchForm, Language, login, signup, slide, nav, parallaxScroll) {
+        , function(parentRequire, $, searchForm, Language, login, signup, slide, nav, parallaxScroll, CedricVideo) {
         $(document).ready(function() {
             // Initial language settings
             var language = Language();
@@ -2907,6 +2967,9 @@ define("modernizr", function(){});
             nav.init();
             // Parallax Scroll
             parallaxScroll.init();
+            // Video
+            var cedricVideo = CedricVideo();
+            cedricVideo.$el.appendTo($(".fn-cedric .fn-mediaplayer"));
         });
     });
 

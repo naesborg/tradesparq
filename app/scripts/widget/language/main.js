@@ -44,6 +44,13 @@ define(["jquery", "jquery.cookie", "../blurb/main", "text!./index.html"], functi
 		// Return object
 		var o = {};
 		o.$el = $template;
+        o.init = function(){
+
+            var me = this;
+            var $me = me.$el;
+
+        };
+
 		return o;
 	};
 

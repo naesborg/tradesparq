@@ -34,7 +34,7 @@
                 <nav class="col-l">
                     <ul class="hor">
                         <li>
-                            <a href="#howitworks">HOW IT WORKS</a>
+                            <a href="#howitworks" data-async="true" class="fn-howitworks">HOW IT WORKS</a>
                         </li>
                         <li>
                             <a href="#freecustomsdata">FREE CUSTOMS DATA</a>
@@ -64,7 +64,7 @@
                         <div class="page-width">
                             <div class="herotestimonial-des">
                                 <p class="elektra">“I narrowed my search to 7 qualified suppliers by using my network.”</p>
-                                <button type="button" class="btn btn-large btn-primary opensans">See how it works<span class="caret"></span></button>
+                                <button type="button" class="btn btn-large btn-primary opensans fn-howitworks">See how it works<span class="caret"></span></button>
                             </div>
                         </div>
                     </div>
@@ -103,13 +103,49 @@
         </div>
         <div class="layout-up-container">
             <div class="layout-up">
+                <div id="howitworks" class="howitworks-container fn-howitworks-container page-width"></div>
                 <div class="searchbar fn-searchbar page-width cf">
                     <div class="col-r searchformcontainer fn-searchformcontainer"></div>
                     <h2 class="elektra">Try it now, the Safest Place for Global Trade™</h2>
                 </div>
                 <div class="mediavoice page-width cf">
-                    <div class="col-r"></div>
-                    <h2 class="elektra">See what the media is saying about us</h2>
+                    <h2 class="elektra col-l">See what the media is saying about us</h2>
+                    <div class="col-r">
+                        <a href="http://www.forbes.com/sites/limyunghui/2012/02/28/demo-asia-2012-featuring-76-tech-startups-from-14-countries/" target="_blank">
+                            <img height="48" src="styles/logo/news_forbes.png" alt="Forbes">
+                        </a>
+                        <a href="http://www.tradesparq.com/public/html/press_scmp" target="_blank">
+                            <img height="48" src="styles/logo/news_scmp.png" alt="Source china morning post">
+                        </a>
+                        <a href="http://blogs.wsj.com/venturecapital/2012/07/16/the-daily-start-up-venture-firms-test-virtual-biotech-strategy/" target="_blank">
+                            <img height="48" src="styles/logo/news_wsj.png" alt="Wall street journal">
+                        </a>
+                        <a href="http://www.sfgate.com/cgi-bin/article.cgi?f=/g/a/2012/01/19/prweb9120614.DTL" target="_blank">
+                            <img height="48" src="styles/logo/news_sfc.png" alt="San francisco">
+                        </a>
+                        <a href="http://pandodaily.com/2013/02/01/a-couple-of-americans-in-china-take-on-alibaba-with-social-and-er-customs-data/" target="_blank">
+                            <img height="48" src="styles/logo/news_pandodaily.png" alt="Pando daily">
+                        </a>
+                        <br>
+                        <a href="http://venturebeat.com/2012/03/01/the-most-memorable-cloud-pitches-at-demo-asia/" target="_blank">
+                            <img height="48" src="styles/logo/news_venturebeat.png" alt="Venture best">
+                        </a>
+                        <a href="http://tech.qq.com/a/20110812/000275.htm" target="_blank">
+                            <img height="48" src="styles/logo/news_qq.png" alt="Tencent">
+                        </a>
+                        <a href="http://technode.com/2011/08/05/tradesparq-introduces-social-sourcing-it-is-the-alibaba-combined-with-linkedin/" target="_blank">
+                            <img height="48" src="styles/logo/news_technode.png" alt="Tech node">
+                        </a>
+                        <a href="http://sgentrepreneurs.com/singapore-entrepreneurs/2012/03/02/sgentrepreneurs-interviews-tradesparq-b2b-social-commerce/" target="_blank">
+                            <img height="48" src="styles/logo/news_sgentrepreneurs.png" alt="sgentrepreneurs">
+                        </a>
+                        <a href="http://sh.sohu.com/20130123/n364437229.shtml" target="_blank">
+                            <img height="48" src="styles/logo/news_sohu.png" alt="Sohu">
+                        </a>
+                        <a href="http://cs.sina.com.cn/minisite/news/201301283024.html" target="_blank">
+                            <img height="48" src="styles/logo/news_sina.png" alt="Sina">
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -137,10 +173,10 @@
                 </div>
             </div>
         </div>
-        <div class="cedric page-width mt-10">
+        <div class="cedric fn-cedric page-width">
             <h2 class="txtalign-c elektra"><strong>Still not convinced?</strong> Meet Cedric.</h2>
             <p class="txtalign-c opensans">See how Cedric, a purchasing agent for a BBQ retailer in the US uses Tradesparq to find and verify suppliers in China.</p>
-            <div class="mediaplayer align-c mt-30"></div>
+            <div class="mediaplayer fn-mediaplayer align-c mt-30"></div>
         </div>
         <div class="banner page-width">
             <p class="elektra"><img src="styles/images/logo_30.png" alt="logo" width="115" height="30"> is the world’s fastest growing social network for traders around the world</p>
@@ -420,15 +456,21 @@
                         </li>
                     </ul>
                 </div>
-                <ul class="col-r ext-link hor mr-10 mt-10">
+                <ul class="col-r ext-link hor">
                     <li class="ext-link-facebook">
-                        <a href="//www.facebook.com"></a>
+                        <a href="//www.facebook.com" class="grayscale">
+                            <img src="styles/logo/logo_facebook.png" alt="Facebook">
+                        </a>
                     </li>
                     <li class="ext-link-twitter">
-                        <a href="//www.twitter.com"></a>
+                        <a href="//www.twitter.com" class="grayscale">
+                            <img src="styles/logo/logo_twitter.png" alt="Twitter">
+                        </a>
                     </li>
                     <li class="ext-link-youtube">
-                        <a href="//www.youtube.com"></a>
+                        <a href="//www.youtube.com" class="grayscale">
+                            <img src="styles/logo/logo_youtube.png" alt="Youtube">
+                        </a>
                     </li>
                 </ul>
             </div>

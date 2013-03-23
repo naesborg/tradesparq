@@ -37,8 +37,10 @@
         , 'widget/slide/main'
         , 'widget/nav/main'
         , 'widget/parallaxscroll/main'
+        , 'widget/cedricvideo/main'
+        , 'widget/howitworks/main'
         , 'modernizr']
-        , function(parentRequire, $, searchForm, Language, login, signup,nav, parallaxScroll, slide) {
+        , function(parentRequire, $, searchForm, Language, login, signup, slide, nav, parallaxScroll, CedricVideo, howitworks) {
         $(document).ready(function() {
             // Initial language settings
             var language = Language();
@@ -55,6 +57,11 @@
             nav.init();
             // Parallax Scroll
             parallaxScroll.init();
+            // Video
+            var cedricVideo = CedricVideo();
+            cedricVideo.$el.appendTo($(".fn-cedric .fn-mediaplayer"));
+            // How it works
+            howitworks.init();
         });
     });
 
