@@ -610,6 +610,12 @@ body {
   color: #000;
   min-width: 1024px;
 }
+@media (max-width: 767px) {
+  body {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
 a,
 a:hover {
   text-decoration: none;
@@ -1954,26 +1960,21 @@ nav ul > li > a {
 .contentindexing > div .contentindexing-retrieve {
   margin: 15px 0 0;
 }
-.contentindexing > div .contentindexing-retrieve > li {
+.contentindexing > div .contentindexing-retrieve > li > div {
   border: 1px solid #ddd;
   border-radius: 5px;
   padding: 15px 20px;
-  width: 23%;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -o-box-sizing: border-box;
   box-sizing: border-box;
-  margin-left: 25px;
 }
-.contentindexing > div .contentindexing-retrieve > li:first-child {
-  margin-left: 0;
-}
-.contentindexing > div .contentindexing-retrieve > li > h3 {
+.contentindexing > div .contentindexing-retrieve > li > div > h3 {
   font-size: 13px;
   margin: 0 0 10px;
   line-height: 1.2em;
 }
-.contentindexing > div .contentindexing-retrieve > li > a {
+.contentindexing > div .contentindexing-retrieve > li > div > a {
   float: left;
   margin: 0 10px 0 0;
   line-height: 2.5em;
@@ -2041,18 +2042,15 @@ ul.extlogin-links > li > a > img {
   height: 29px;
 }
 .howitworks-container .howitworks {
-  padding: 0;
   background-color: #ebebeb;
   position: relative;
   z-index: 10;
   margin-bottom: -70px;
 }
 .howitworks-container .howitworks > ul {
-  margin: 0;
-  padding: 0 20px;
+  margin: 0 20px;
 }
 .howitworks-container .howitworks > ul > li {
-  width: 33.3%;
   padding: 110px 0 120px;
 }
 .howitworks-container .howitworks > ul > li > .howitworks-pic {

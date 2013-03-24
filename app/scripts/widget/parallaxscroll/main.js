@@ -1,4 +1,4 @@
-define(['jquery'], function($) {
+define(['jquery', "detect"], function($, detect) {
     'use strict';
 
     var DEFAULT_MIN_HEIGHT = 500;
@@ -19,6 +19,13 @@ define(['jquery'], function($) {
             var heightFreeCustomsFixed = $freecustomsFixed.height();
             var parallaxRate = (heightFreeCustomsFixed - heightFreeCustoms) / (VIEWPORT_HEIGHT + heightFreeCustoms);
             var absFreeCustomsTop = $freecustoms.get(0).getBoundingClientRect().top;
+
+            var ua = detect.parse(navigator.userAgent);
+            if(ua.device.type !== "Desktop"){
+                $freecustomsFixed.css("top", (heightFreeCustomsFixed - heightFreeCustoms) * -1);
+                return;
+            }
+
             $freecustomsFixed.css("top", ((heightFreeCustomsFixed - heightFreeCustoms)-(VIEWPORT_HEIGHT - absFreeCustomsTop) * parallaxRate) * -1);
 
             // Attach window scroll event

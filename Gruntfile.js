@@ -9,6 +9,7 @@ module.exports = function(grunt) {
             "jquery.scrollto": "vendor/jquery.scrollto/0.0.1/jquery.scrollto",
             "modernizr": "vendor/modernizr/2.6.1/modernizr.min",
             "fancybox": "vendor/fancybox/2.1.4/jquery.fancybox",
+            "detect": "vendor/detect/2.1.4/detect",
             "text": "vendor/text/2.0.5+/text",
             "widget": "widget/"
   };
